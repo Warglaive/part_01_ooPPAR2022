@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using CarDealerScenario.Enums;
 namespace CarDealerScenario.BusinessLogic
 {
     /// <summary>
@@ -58,6 +58,34 @@ namespace CarDealerScenario.BusinessLogic
         {
             long total = 0;
             return 0;
+        }
+
+        /// <summary>
+        /// increase all prices with a certain percentage
+        /// </summary>
+        /// <param name="percent"></param>
+        void IncreaseAllPricesByPercent(decimal percent)
+        {
+
+        }
+
+        /// <summary>
+        /// search for a vehicle based on licence
+        /// </summary>
+        /// <param name="licensePlate"></param>
+        void SearchVehicleByLicensePlate(string licensePlate)
+        {
+
+        }
+
+
+        /// <summary>
+        /// search for a vehicle in a certain price range
+        /// </summary>
+        /// <param name="priceRange"></param>
+        void SearchVehicleInAPriceRange(PriceRange priceRange)
+        {
+
         }
     }
 }
