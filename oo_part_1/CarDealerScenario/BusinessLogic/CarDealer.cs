@@ -22,5 +22,41 @@ namespace CarDealerScenario.BusinessLogic
         {
             VehiclesList.Add(vehicle);
         }
+
+        /// <summary>
+        /// print a list of Vehicles and their most important characteristics
+        /// </summary>
+        void PrintVehiclesList()
+        {
+            //TODO:
+        }
+
+        /// <summary>
+        /// get the number of vehicles
+        /// </summary>
+        void GetNumberOfVehicles()
+        {
+            //TODO:
+        }
+
+        /// <summary>
+        ///  get the total value of all vehicles
+        /// </summary>
+        /// <returns></returns>
+        long TotalNumberOfVehicles()
+        {
+            //TODO:
+            return 0;
+        }
+
+        /// <summary>
+        /// get the price of a specific vehicle (based on ID)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        long GetVehiclePrice(long id)
+        {
+            long total = 0;
+        }
     }
 }
