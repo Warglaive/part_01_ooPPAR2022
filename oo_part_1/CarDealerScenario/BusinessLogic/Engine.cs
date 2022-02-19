@@ -10,9 +10,20 @@ namespace CarDealerScenario.BusinessLogic
     {
         public void Start()
         {
-            var args = ReadInput();
+            var inputArguments = ReadInput();
+            var carDealer = new CarDealer();
+            long id = (long)inputArguments[0];
+            decimal price = (decimal)inputArguments[1];
+            string licensePlate = (string)inputArguments[2];
+            VehicleType type = (VehicleType)inputArguments[3];
+
+            carDealer.CreateVehicle(id, price, licensePlate, type);
 
         }
+        /// <summary>
+        /// Read input from console
+        /// </summary>
+        /// <returns>List containing the input</returns>
         List<Object> ReadInput()
         {
             Console.WriteLine("Enter vehicle Id: ");
