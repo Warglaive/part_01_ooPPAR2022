@@ -1,5 +1,4 @@
 ﻿using CarDealerScenario.BusinessLogic;
-using System;
 
 namespace CarDealerScenario // Note: actual namespace depends on the project name.
 {
@@ -7,7 +6,7 @@ namespace CarDealerScenario // Note: actual namespace depends on the project nam
     {
         static void Main()
         {
-            Engine.Start();
+            //do stuff with CarDealer class
         }
     }
 }
