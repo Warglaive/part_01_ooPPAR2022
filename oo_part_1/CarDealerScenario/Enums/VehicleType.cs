@@ -8,6 +8,6 @@ namespace CarDealerScenario
 {
     internal enum VehicleType
     {
-        Car, Truck
+        Unassigned, Car, Truck
     }
 }
