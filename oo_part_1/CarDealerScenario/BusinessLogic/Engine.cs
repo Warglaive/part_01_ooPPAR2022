@@ -10,10 +10,10 @@ namespace CarDealerScenario.BusinessLogic
     {
         public void Start()
         {
-            ReadInput();
+            var args = ReadInput();
 
         }
-        void ReadInput()
+        List<Object> ReadInput()
         {
             Console.WriteLine("Enter vehicle Id: ");
             var id = long.Parse(Console.ReadLine());
@@ -23,29 +23,33 @@ namespace CarDealerScenario.BusinessLogic
             var licensePlate = Console.ReadLine();
             //make user select type
             VehicleType type = VehicleType.Unassigned;
-            bool showMenu = true;
-            while (showMenu)
+
+            Console.WriteLine("Select vehicle type: ");
+            Console.WriteLine("1) - Car");
+            Console.WriteLine("2) - Truck");
+            Console.WriteLine("3) - Exit simulation (won't save any previous input.");
+            switch (Console.ReadLine())
             {
-                Console.WriteLine("Select vehicle type: ");
-                Console.WriteLine("1) - Car");
-                Console.WriteLine("2) - Truck");
-                Console.WriteLine("3) - Exit simulation (won't save any previous input.");
-                switch (Console.ReadLine())
-                {
-                    case "1":
-                        type = VehicleType.Car;
-                        break;
-                    case "2":
-                        type = VehicleType.Truck;
-                        break;
-                    case "3":
-                        Environment.Exit(0);
-                        break;
-                    default:
-                        type = VehicleType.Unassigned;
-                        break;
-                }
+                case "1":
+                    type = VehicleType.Car;
+                    break;
+                case "2":
+                    type = VehicleType.Truck;
+                    break;
+                case "3":
+                    Environment.Exit(0);
+                    break;
+                default:
+                    type = VehicleType.Unassigned;
+                    break;
+
             }
+            List<object> list = new();
+            list.Add(id);
+            list.Add(price);
+            list.Add(licensePlate);
+            list.Add(type);
+            return list;
         }
     }
 }
