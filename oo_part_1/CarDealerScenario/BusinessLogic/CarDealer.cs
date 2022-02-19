@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CarDealerScenario.BusinessLogic
 {
     /// <summary>
-    /// 
+    /// Create, save, list, print Vehicle operations
     /// </summary>
     internal class CarDealer
     {

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CarDealerScenario.BusinessLogic
 {
+    /// <summary>
+    ///  Class used to mainly execute methods from CarDealer and secondly pass arguments from the console.
+    /// </summary>
     internal class Engine
     {
         public void Start()
