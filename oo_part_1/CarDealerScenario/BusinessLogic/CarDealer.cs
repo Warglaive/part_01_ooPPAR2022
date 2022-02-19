@@ -11,6 +11,7 @@ namespace CarDealerScenario.BusinessLogic
     /// </summary>
     internal class CarDealer
     {
-        List<Vehicle> VehiclesList = new();
+        List<Vehicle> VehiclesList = new List<Vehicle>();
+
     }
 }

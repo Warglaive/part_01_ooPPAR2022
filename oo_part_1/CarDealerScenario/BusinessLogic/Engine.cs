@@ -11,6 +11,9 @@ namespace CarDealerScenario.BusinessLogic
         public static void Start()
         {
             //Do stuff with CarDealer class
+            var carDealer = new CarDealer();
+
+
         }
     }
 }
