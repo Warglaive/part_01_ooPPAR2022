@@ -57,6 +57,7 @@ namespace CarDealerScenario.BusinessLogic
         long GetVehiclePrice(long id)
         {
             long total = 0;
+            return 0;
         }
     }
 }
