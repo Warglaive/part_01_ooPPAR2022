@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarDealerScenario
 {
-    internal enum VehicleTypes
+    internal enum VehicleType
     {
         Car, Truck
     }
