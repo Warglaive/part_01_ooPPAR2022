@@ -11,16 +11,22 @@ namespace CarDealerScenario.BusinessLogic
     /// </summary>
     internal class Engine
     {
+        /// <summary>
+        /// Get arguments and create a Vehicle
+        /// </summary>
         public void Start()
         {
             var inputArguments = ReadInput();
+            //
             var carDealer = new CarDealer();
+            //
             long id = (long)inputArguments[0];
             decimal price = (decimal)inputArguments[1];
             string licensePlate = (string)inputArguments[2];
             VehicleType type = (VehicleType)inputArguments[3];
-
-            carDealer.CreateVehicle(id, price, licensePlate, type);
+            //Execute Create, save, list, print Vehicle operations
+            var vehicle = carDealer.CreateVehicle(id, price, licensePlate, type);
+            carDealer.AddVehicle(vehicle);
 
         }
         /// <summary>

@@ -18,9 +18,9 @@ namespace CarDealerScenario.BusinessLogic
         {
             return new Vehicle(id, price, LicensePlate, Type);
         }
-        //public void AddVehicle(Vehicle vehicle)
-        //{
-        //    return new Vehicle(0, 0, "s", VehicleType.Car);
-        //}
+        public void AddVehicle(Vehicle vehicle)
+        {
+            VehiclesList.Add(vehicle);
+        }
     }
 }
