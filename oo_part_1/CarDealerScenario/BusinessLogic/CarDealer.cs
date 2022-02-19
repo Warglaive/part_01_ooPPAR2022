@@ -16,7 +16,6 @@ namespace CarDealerScenario.BusinessLogic
 
         public Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
         {
-            //Validate
             return new Vehicle(id, price, LicensePlate, Type);
         }
         //public void AddVehicle(Vehicle vehicle)

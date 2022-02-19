@@ -20,11 +20,15 @@ namespace CarDealerScenario
         private PriceRange PriceRanges;
         public Vehicle(long id, decimal price, string licensePlate, VehicleType type)
         {
-            Id = id;
+
+            //Validate input
+            //
             if (price <= MinVehiclePrice || price >= MaxVehiclePrice)
             {
                 throw new InvalidVehiclePriceException("Invalid vehicle price.");
             }
+            //
+            Id = id;
             Price = price;
             LicensePlate = licensePlate;
             Type = type;
