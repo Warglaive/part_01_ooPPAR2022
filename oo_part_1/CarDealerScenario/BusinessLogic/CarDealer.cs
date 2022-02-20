@@ -13,7 +13,7 @@ namespace CarDealerScenario.BusinessLogic
         /// Example of Inheritance
         /// </summary>
         /// <returns></returns>
-        public Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
+        public new Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
         {
             return new Vehicle(id, price, LicensePlate, Type);
         }
