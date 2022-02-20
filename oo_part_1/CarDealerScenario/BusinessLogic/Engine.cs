@@ -29,7 +29,6 @@ namespace CarDealerScenario.BusinessLogic
             CarDealer.CreateVehicle(id, price, licensePlate, type);
 
 
-
             Console.WriteLine("1) - Show Car Dealer menu");
             Console.WriteLine("2) - Exit simulation (won't save any previous input).");
 
