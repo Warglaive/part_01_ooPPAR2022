@@ -1,10 +1,5 @@
 ﻿using CarDealerScenario.Enums;
 using CustomExceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarDealerScenario
 {
@@ -20,7 +15,6 @@ namespace CarDealerScenario
         private PriceRange PriceRanges;
         public Vehicle(long id, decimal price, string licensePlate, VehicleType type)
         {
-
             //Validate input
             //
             try
