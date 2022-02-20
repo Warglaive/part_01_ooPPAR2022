@@ -103,7 +103,7 @@ namespace CarDealerScenario.BusinessLogic
             Console.WriteLine("4) - Get the total value of all vehicles");
             Console.WriteLine("5) - Get vehicle price by Id");
             Console.WriteLine("6) - Increase ALL vehicles prices by certain percent");
-
+            Console.WriteLine("7) - Search a vehicle by license plate");
 
             //TODO:
             switch (Console.ReadLine())
@@ -133,6 +133,12 @@ namespace CarDealerScenario.BusinessLogic
                     Console.WriteLine("Enter a percentage: ");
                     var percent = decimal.Parse(Console.ReadLine());
                     this.CarDealer.IncreaseAllPricesByPercent(percent);
+                    ShowCarDealerMenu();
+                    break;
+                case "7":
+                    Console.WriteLine("Enter license plate");
+                    var licensePlate = Console.ReadLine();
+                    this.CarDealer.SearchVehicleByLicensePlate(licensePlate);
                     ShowCarDealerMenu();
                     break;
                 default:

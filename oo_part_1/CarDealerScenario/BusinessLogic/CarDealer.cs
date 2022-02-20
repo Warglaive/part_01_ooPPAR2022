@@ -105,9 +105,14 @@ namespace CarDealerScenario.BusinessLogic
         /// search for a vehicle based on licence
         /// </summary>
         /// <param name="licensePlate"></param>
-        public void SearchVehicleByLicensePlate(string licensePlate)
+        public string SearchVehicleByLicensePlate(string licensePlate)
         {
-
+            Console.WriteLine($"Searching for vehicle with license plate number {licensePlate}...");
+            Vehicle vehicle = this.VehiclesList.Find(x => x.LicensePlate == licensePlate);
+            Console.WriteLine("Vehicle FOUND! Printing details...");
+            Console.WriteLine($"Id = { vehicle.Id}; Price = { vehicle.Price}; LicensePlate = { vehicle.LicensePlate};" +
+                $" Type = { vehicle.Type}; Price range = { vehicle.PriceRange }");
+            return licensePlate;
         }
 
 
