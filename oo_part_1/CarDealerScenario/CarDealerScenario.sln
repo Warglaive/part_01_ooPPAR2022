@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealerScenario", "CarDea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomExceptions", "..\CustomExceptions\CustomExceptions.csproj", "{E7F9BA75-C56B-452A-B1BA-FC3FE4AF97F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCarDealer", "..\TestCarDealer\TestCarDealer.csproj", "{E4A42922-42AA-48A8-9EB3-4942F3176515}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E7F9BA75-C56B-452A-B1BA-FC3FE4AF97F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7F9BA75-C56B-452A-B1BA-FC3FE4AF97F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7F9BA75-C56B-452A-B1BA-FC3FE4AF97F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A42922-42AA-48A8-9EB3-4942F3176515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A42922-42AA-48A8-9EB3-4942F3176515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A42922-42AA-48A8-9EB3-4942F3176515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A42922-42AA-48A8-9EB3-4942F3176515}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
