@@ -17,10 +17,6 @@ namespace CarDealerScenario.BusinessLogic
         /// <summary>
         /// Example of Inheritance
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="price"></param>
-        /// <param name="LicensePlate"></param>
-        /// <param name="Type"></param>
         /// <returns></returns>
         private Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
         {
