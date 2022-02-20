@@ -62,7 +62,7 @@ namespace CarDealerScenario.BusinessLogic
         {
             //TODO:
             var totalPrice = VehiclesList.Select(x => x.Price).Sum();
-            Console.WriteLine($"{totalPrice:f2}");
+            Console.WriteLine($"Vehicles total price: {totalPrice:f2}");
             return totalPrice;
         }
 
@@ -73,8 +73,14 @@ namespace CarDealerScenario.BusinessLogic
         /// <returns></returns>
         public long GetVehiclePrice(long id)
         {
-            long total = 0;
+            var vehicle = this.VehiclesList.First(x => x.Id == id);
+            PrintVehiclePrice(vehicle);
             return 0;
+        }
+
+        private static void PrintVehiclePrice(Vehicle vehicle)
+        {
+            Console.WriteLine($"Vehicle with id = {vehicle.Id} is priced at: {vehicle.Price:f2}");
         }
 
         /// <summary>

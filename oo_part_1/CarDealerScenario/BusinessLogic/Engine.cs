@@ -101,6 +101,8 @@ namespace CarDealerScenario.BusinessLogic
             Console.WriteLine("2) - Print all vehicles");
             Console.WriteLine("3) - Get the number of all vehicles");
             Console.WriteLine("4) - Get the total value of all vehicles");
+            Console.WriteLine("5) - Get vehicle price by Id");
+
             //TODO:
             switch (Console.ReadLine())
             {
@@ -117,6 +119,12 @@ namespace CarDealerScenario.BusinessLogic
                     break;
                 case "4":
                     this.CarDealer.GetTotalValueOfVehicles();
+                    ShowCarDealerMenu();
+                    break;
+                case "5":
+                    Console.WriteLine("Enter vehicle id");
+                    long id = long.Parse(Console.ReadLine());
+                    this.CarDealer.GetVehiclePrice(id);
                     ShowCarDealerMenu();
                     break;
                 default:
