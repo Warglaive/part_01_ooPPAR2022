@@ -23,10 +23,20 @@ namespace CarDealerScenario
 
             //Validate input
             //
-            if (price <= MinVehiclePrice || price >= MaxVehiclePrice)
+            try
             {
-                throw new InvalidVehiclePriceException("Invalid vehicle price.");
+                if (price <= MinVehiclePrice || price >= MaxVehiclePrice)
+                {
+                    throw new InvalidVehiclePriceException("Invalid vehicle price.");
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message + "Press Enter to terminate program");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+
             //
             Id = id;
             Price = price;
