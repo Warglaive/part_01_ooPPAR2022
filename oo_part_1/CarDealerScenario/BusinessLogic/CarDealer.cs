@@ -49,7 +49,7 @@ namespace CarDealerScenario.BusinessLogic
             return vehiclesCount;
         }
 
-        private static void PrintVehiclesCount(int vehiclesCount)
+        private void PrintVehiclesCount(int vehiclesCount)
         {
             Console.WriteLine($"Vehicles count: {vehiclesCount}");
         }
@@ -86,10 +86,19 @@ namespace CarDealerScenario.BusinessLogic
         /// <summary>
         /// increase all prices with a certain percentage
         /// </summary>
-        /// <param name="percent"></param>
-        public void IncreaseAllPricesByPercent(decimal percent)
+        /// <param name="value"></param>
+        public decimal IncreaseAllPricesByPercent(decimal value)
         {
-
+            Console.WriteLine("Current vehicles details: ");
+            //print old prices
+            PrintVehiclesList();
+            //increate by percent
+            Console.WriteLine($"Increase all prices by {value:f2}%...");
+            var valueToPercent = value / 100;
+            this.VehiclesList.ForEach(x => x.Price = x.Price + (x.Price * valueToPercent));
+            //print new prices
+            PrintVehiclesList();
+            return value;
         }
 
         /// <summary>
