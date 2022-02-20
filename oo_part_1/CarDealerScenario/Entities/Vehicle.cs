@@ -73,15 +73,5 @@ namespace CarDealerScenario
                 this.priceRange = PriceRange.Expensive;
             }
         }
-
-
-        //public void SetPrice(decimal price)
-        //{
-        //    this.Price = price;
-        //}
-        //public decimal GetPrice()
-        //{
-        //    return this.Price;
-        //}
     }
 }
