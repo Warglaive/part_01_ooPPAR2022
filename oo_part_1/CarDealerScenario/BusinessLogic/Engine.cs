@@ -27,7 +27,7 @@ namespace CarDealerScenario.BusinessLogic
             //Execute Create, save, list, print Vehicle operations
             var vehicle = carDealer.CreateVehicle(id, price, licensePlate, type);
             carDealer.AddVehicle(vehicle);
-
+            carDealer.PrintVehiclesList();
         }
         /// <summary>
         /// Read input from console

@@ -8,12 +8,20 @@ namespace CarDealerScenario
     {
         private const int MaxVehiclePrice = 100000000;
         private const int MinVehiclePrice = 0;
-        private long Id;
-        private decimal Price { get; set; }
-        private string LicensePlate { get; set; }
-        private VehicleType Type;
+        private long id;
+        private decimal price;
+        private string licensePlate;
+        private VehicleType type;
         //Auto assign when new Vehicle is created
-        private PriceRange PriceRanges;
+        private PriceRange priceRange;
+
+        public int Id { get; set; }
+        public decimal Price { get; set; }
+        public string LicensePlate { get; set; }
+        public VehicleType Type { get; set; }
+        public PriceRange PriceRange { get; set; }
+
+
         public Vehicle(long id, decimal price, string licensePlate, VehicleType type)
         {
             //Validate input
@@ -33,10 +41,10 @@ namespace CarDealerScenario
             }
 
             //
-            Id = id;
-            Price = price;
-            LicensePlate = licensePlate;
-            Type = type;
+            this.id = id;
+            this.price = price;
+            this.licensePlate = licensePlate;
+            this.type = type;
             AssignPriceRange(price);
         }
         /// <summary>
@@ -44,23 +52,23 @@ namespace CarDealerScenario
         /// </summary>
         public Vehicle(decimal price, string licensePlate, VehicleType type)
         {
-            this.Price = price;
-            this.LicensePlate = licensePlate;
-            this.Type = type;
+            this.price = price;
+            this.licensePlate = licensePlate;
+            this.type = type;
         }
         private void AssignPriceRange(decimal price)
         {
             if (price >= 0 && price < 10000)
             {
-                this.PriceRanges = PriceRange.Cheap;
+                this.priceRange = PriceRange.Cheap;
             }
             else if (price < 10000 && price < 100000)
             {
-                this.PriceRanges = PriceRange.Mid;
+                this.priceRange = PriceRange.Mid;
             }
             else if (price >= 100000)
             {
-                this.PriceRanges = PriceRange.Expensive;
+                this.priceRange = PriceRange.Expensive;
             }
         }
 

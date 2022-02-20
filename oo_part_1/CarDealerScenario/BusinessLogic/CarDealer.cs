@@ -25,9 +25,9 @@ namespace CarDealerScenario.BusinessLogic
         /// <summary>
         /// print a list of Vehicles and their most important characteristics
         /// </summary>
-        void PrintVehiclesList()
+        public void PrintVehiclesList()
         {
-            //TODO:
+            VehiclesList.ForEach(x => Console.WriteLine(x.Id));
         }
 
         /// <summary>
