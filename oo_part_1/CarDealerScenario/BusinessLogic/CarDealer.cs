@@ -58,10 +58,12 @@ namespace CarDealerScenario.BusinessLogic
         ///  get the total value of all vehicles
         /// </summary>
         /// <returns></returns>
-        long TotalNumberOfVehicles()
+        public decimal GetTotalValueOfVehicles()
         {
             //TODO:
-            return 0;
+            var totalPrice = VehiclesList.Select(x => x.Price).Sum();
+            Console.WriteLine($"{totalPrice:f2}");
+            return totalPrice;
         }
 
         /// <summary>
@@ -69,7 +71,7 @@ namespace CarDealerScenario.BusinessLogic
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        long GetVehiclePrice(long id)
+        public long GetVehiclePrice(long id)
         {
             long total = 0;
             return 0;
@@ -79,7 +81,7 @@ namespace CarDealerScenario.BusinessLogic
         /// increase all prices with a certain percentage
         /// </summary>
         /// <param name="percent"></param>
-        void IncreaseAllPricesByPercent(decimal percent)
+        public void IncreaseAllPricesByPercent(decimal percent)
         {
 
         }
@@ -88,7 +90,7 @@ namespace CarDealerScenario.BusinessLogic
         /// search for a vehicle based on licence
         /// </summary>
         /// <param name="licensePlate"></param>
-        void SearchVehicleByLicensePlate(string licensePlate)
+        public void SearchVehicleByLicensePlate(string licensePlate)
         {
 
         }
@@ -98,7 +100,7 @@ namespace CarDealerScenario.BusinessLogic
         /// search for a vehicle in a certain price range
         /// </summary>
         /// <param name="priceRange"></param>
-        void SearchVehicleInAPriceRange(PriceRange priceRange)
+        public void SearchVehicleInAPriceRange(PriceRange priceRange)
         {
 
         }

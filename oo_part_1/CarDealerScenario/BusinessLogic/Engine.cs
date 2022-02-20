@@ -100,6 +100,7 @@ namespace CarDealerScenario.BusinessLogic
             Console.WriteLine("1) - Add new vehicle");
             Console.WriteLine("2) - Print all vehicles");
             Console.WriteLine("3) - Get the number of all vehicles");
+            Console.WriteLine("4) - Get the total value of all vehicles");
             //TODO:
             switch (Console.ReadLine())
             {
@@ -112,6 +113,10 @@ namespace CarDealerScenario.BusinessLogic
                     break;
                 case "3":
                     this.CarDealer.GetNumberOfVehicles();
+                    ShowCarDealerMenu();
+                    break;
+                case "4":
+                    this.CarDealer.GetTotalValueOfVehicles();
                     ShowCarDealerMenu();
                     break;
                 default:
