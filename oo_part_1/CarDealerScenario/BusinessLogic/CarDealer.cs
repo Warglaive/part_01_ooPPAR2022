@@ -1,4 +1,5 @@
 ﻿using CarDealerScenario.Enums;
+using CustomExceptions;
 namespace CarDealerScenario.BusinessLogic
 {
     /// <summary>
@@ -108,10 +109,14 @@ namespace CarDealerScenario.BusinessLogic
         /// search for a vehicle based on licence
         /// </summary>
         /// <param name="licensePlate"></param>
-        public Vehicle SearchVehicleByLicensePlate(string licensePlate)
+        public Vehicle? SearchVehicleByLicensePlate(string licensePlate)
         {
             Console.WriteLine($"Searching for vehicle with license plate number {licensePlate}...");
-            Vehicle vehicle = this.VehiclesList.Find(x => x.LicensePlate == licensePlate);
+            Vehicle vehicle = VehiclesList.Find(x => x.LicensePlate == licensePlate);
+            if (vehicle == null)
+            {
+                Console.WriteLine("No such vehicle exists, try another price range");
+            }
             Console.WriteLine("Vehicle FOUND! Printing details...");
             Console.WriteLine($"Id = { vehicle.Id}; Price = { vehicle.Price}; LicensePlate = { vehicle.LicensePlate};" +
                 $" Type = { vehicle.Type}; Price range = { vehicle.PriceRange }");
@@ -123,10 +128,22 @@ namespace CarDealerScenario.BusinessLogic
         /// search for a vehicle in a certain price range
         /// </summary>
         /// <param name="priceRange"></param>
-        public void SearchVehicleInAPriceRange(PriceRange priceRange)
+        public Vehicle? SearchVehicleInAPriceRange(PriceRange priceRange)
         {
-
+            try
+            {
+                Console.WriteLine($"Looking for vehicle in price range {priceRange}...");
+                var vehicle = this.VehiclesList.First(x => x.PriceRange.Equals(priceRange));
+                Console.WriteLine("Vehicle Found! Printing...");
+                Console.WriteLine($"Id = { vehicle.Id}; Price = { vehicle.Price}; LicensePlate = { vehicle.LicensePlate};" +
+                  $" Type = { vehicle.Type}; Price range = { vehicle.PriceRange }");
+                return vehicle;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"No vehicle in price range: {priceRange} exists, try another price range");
+                return null;
+            }
         }
-
     }
 }

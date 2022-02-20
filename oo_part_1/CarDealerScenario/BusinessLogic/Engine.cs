@@ -147,6 +147,7 @@ namespace CarDealerScenario.BusinessLogic
                     PriceRange priceRange;
                     Enum.TryParse(Console.ReadLine(), out priceRange);
                     this.CarDealer.SearchVehicleInAPriceRange(priceRange);
+                    ShowCarDealerMenu();
                     break;
                 default:
                     break;
