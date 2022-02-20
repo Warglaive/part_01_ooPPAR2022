@@ -15,7 +15,17 @@ namespace CarDealerScenario
         //Auto assign when new Vehicle is created
         private PriceRange priceRange;
 
-        public int Id { get; set; }
+        public long Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
         public decimal Price { get; set; }
         public string LicensePlate { get; set; }
         public VehicleType Type { get; set; }
