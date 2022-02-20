@@ -14,22 +14,14 @@ namespace CarDealerScenario
         private VehicleType type;
         //Auto assign when new Vehicle is created
         private PriceRange priceRange;
-
-        public long Id
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-            }
-        }
-        public decimal Price { get; set; }
-        public string LicensePlate { get; set; }
-        public VehicleType Type { get; set; }
-        public PriceRange PriceRange { get; set; }
+        /// <summary>
+        /// Properties for all field
+        /// </summary>
+        public long Id { get { return id; } set { id = value; } }
+        public decimal Price { get { return price; } set { price = value; } }
+        public string LicensePlate { get { return licensePlate; } set { licensePlate = value; } }
+        public VehicleType Type { get { return type; } set { type = value; } }
+        public PriceRange PriceRange { get { return priceRange; } set { priceRange = value; } }
 
 
         public Vehicle(long id, decimal price, string licensePlate, VehicleType type)

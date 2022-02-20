@@ -27,7 +27,7 @@ namespace CarDealerScenario.BusinessLogic
         /// </summary>
         public void PrintVehiclesList()
         {
-            VehiclesList.ForEach(x => Console.WriteLine(x.Id));
+            VehiclesList.ForEach(x => Console.WriteLine($"Id = {x.Id}; Price = {x.Price}; LicensePlate = {x.LicensePlate}; Type = {x.Type}; Price range = {x.PriceRange}"));
         }
 
         /// <summary>
