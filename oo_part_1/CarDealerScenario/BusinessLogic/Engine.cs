@@ -11,12 +11,16 @@ namespace CarDealerScenario.BusinessLogic
     /// </summary>
     internal class Engine
     {
-        protected CarDealer CarDealer = new();
+        public Engine()
+        {
+            this.CarDealer = new CarDealer();
+        }
+        public CarDealer CarDealer;
 
         /// <summary>
         /// Get arguments and create a Vehicle
         /// </summary>
-        public void CreateNewVehicle()
+        public void Start()
         {
             var inputArguments = ReadInput();
             //
@@ -28,7 +32,12 @@ namespace CarDealerScenario.BusinessLogic
             //Execute Create, save, list, print Vehicle operations
             CarDealer.CreateVehicle(id, price, licensePlate, type);
 
+            ShowCarDealerMenu();
 
+        }
+
+        private void ShowCarDealerMenu()
+        {
             Console.WriteLine("1) - Show Car Dealer menu");
             Console.WriteLine("2) - Exit simulation (won't save any previous input).");
 
@@ -43,9 +52,8 @@ namespace CarDealerScenario.BusinessLogic
                 default:
                     break;
             }
-
-
         }
+
         /// <summary>
         /// Read input from console
         /// </summary>
@@ -91,15 +99,20 @@ namespace CarDealerScenario.BusinessLogic
         {
             Console.WriteLine("1) - Add new vehicle");
             Console.WriteLine("2) - Print all vehicles");
-
+            Console.WriteLine("3) - Get the number of all vehicles");
             //TODO:
             switch (Console.ReadLine())
             {
                 case "1":
-                    CreateNewVehicle();
+                    Start();
                     break;
                 case "2":
                     this.CarDealer.PrintVehiclesList();
+                    ShowCarDealerMenu();
+                    break;
+                case "3":
+                    this.CarDealer.GetNumberOfVehicles();
+                    ShowCarDealerMenu();
                     break;
                 default:
                     break;

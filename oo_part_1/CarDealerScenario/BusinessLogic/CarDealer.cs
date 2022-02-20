@@ -6,8 +6,6 @@ namespace CarDealerScenario.BusinessLogic
     /// </summary>
     internal class CarDealer : CarDealerInheritanceExample
     {
-        private Engine Engine = new();
-
         List<Vehicle> VehiclesList = new List<Vehicle>();
         //TODO: 1. Read input, 2.Store input, 3. Perform operations
         //Example of Inheritance
@@ -21,9 +19,15 @@ namespace CarDealerScenario.BusinessLogic
             AddVehicle(vehicle);
             return vehicle;
         }
-        public void AddVehicle(Vehicle vehicle)
+        /// <summary>
+        /// Add vehicle to list
+        /// </summary>
+        /// <param name="vehicle"></param>
+        /// <returns>Return added Vehicle for test purposes</returns>
+        public Vehicle AddVehicle(Vehicle vehicle)
         {
             VehiclesList.Add(vehicle);
+            return vehicle;
         }
 
         /// <summary>
@@ -32,16 +36,22 @@ namespace CarDealerScenario.BusinessLogic
         public void PrintVehiclesList()
         {
             VehiclesList.ForEach(x => Console.WriteLine($"Id = {x.Id}; Price = {x.Price}; LicensePlate = {x.LicensePlate}; Type = {x.Type}; Price range = {x.PriceRange}"));
-           // Engine.
+            // Engine.Start();
         }
 
         /// <summary>
         /// get the number of vehicles
         /// </summary>
-        int GetNumberOfVehicles()
+        public int GetNumberOfVehicles()
         {
             var vehiclesCount = this.VehiclesList.Count();
+            PrintVehiclesCount(vehiclesCount);
             return vehiclesCount;
+        }
+
+        private static void PrintVehiclesCount(int vehiclesCount)
+        {
+            Console.WriteLine($"Vehicles count: {vehiclesCount}");
         }
 
         /// <summary>
@@ -92,5 +102,6 @@ namespace CarDealerScenario.BusinessLogic
         {
 
         }
+
     }
 }
