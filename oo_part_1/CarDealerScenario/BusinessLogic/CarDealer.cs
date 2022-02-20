@@ -71,11 +71,11 @@ namespace CarDealerScenario.BusinessLogic
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public long GetVehiclePrice(long id)
+        public decimal GetVehiclePrice(long id)
         {
             var vehicle = this.VehiclesList.First(x => x.Id == id);
             PrintVehiclePrice(vehicle);
-            return 0;
+            return vehicle.Price;
         }
 
         private static void PrintVehiclePrice(Vehicle vehicle)
