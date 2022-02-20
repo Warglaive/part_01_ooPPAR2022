@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CarDealerScenario.Enums;
+﻿using CarDealerScenario.Enums;
 namespace CarDealerScenario.BusinessLogic
 {
     /// <summary>
@@ -18,7 +13,7 @@ namespace CarDealerScenario.BusinessLogic
         /// Example of Inheritance
         /// </summary>
         /// <returns></returns>
-        private Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
+        public Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
         {
             return new Vehicle(id, price, LicensePlate, Type);
         }

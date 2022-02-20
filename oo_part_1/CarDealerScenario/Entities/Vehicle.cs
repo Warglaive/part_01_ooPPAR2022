@@ -39,7 +39,15 @@ namespace CarDealerScenario
             Type = type;
             AssignPriceRange(price);
         }
-
+        /// <summary>
+        /// No ID Constructor for overloading example
+        /// </summary>
+        public Vehicle(decimal price, string licensePlate, VehicleType type)
+        {
+            this.Price = price;
+            this.LicensePlate = licensePlate;
+            this.Type = type;
+        }
         private void AssignPriceRange(decimal price)
         {
             if (price >= 0 && price < 10000)
@@ -56,7 +64,7 @@ namespace CarDealerScenario
             }
         }
 
-        
+
         //public void SetPrice(decimal price)
         //{
         //    this.Price = price;
