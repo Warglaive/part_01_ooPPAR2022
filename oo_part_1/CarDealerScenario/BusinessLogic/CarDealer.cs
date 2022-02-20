@@ -8,14 +8,16 @@ namespace CarDealerScenario.BusinessLogic
     {
         List<Vehicle> VehiclesList = new List<Vehicle>();
         //TODO: 1. Read input, 2.Store input, 3. Perform operations
-
+        //Example of Inheritance
         /// <summary>
-        /// Example of Inheritance
+        /// Create vehicle and add it to the list
         /// </summary>
         /// <returns></returns>
         public new Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
         {
-            return new Vehicle(id, price, LicensePlate, Type);
+            var vehicle = new Vehicle(id, price, LicensePlate, Type);
+            AddVehicle(vehicle);
+            return vehicle;
         }
         public void AddVehicle(Vehicle vehicle)
         {
