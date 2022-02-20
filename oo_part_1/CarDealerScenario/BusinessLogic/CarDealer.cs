@@ -33,9 +33,10 @@ namespace CarDealerScenario.BusinessLogic
         /// <summary>
         /// get the number of vehicles
         /// </summary>
-        void GetNumberOfVehicles()
+        int GetNumberOfVehicles()
         {
-            //TODO:
+            var vehiclesCount = this.VehiclesList.Count();
+            return vehiclesCount;
         }
 
         /// <summary>
