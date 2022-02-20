@@ -9,12 +9,20 @@ namespace CarDealerScenario.BusinessLogic
     /// <summary>
     /// Create, save, list, print Vehicle operations
     /// </summary>
-    internal class CarDealer
+    internal class CarDealer : CarDealerInheritanceExample
     {
         List<Vehicle> VehiclesList = new List<Vehicle>();
         //TODO: 1. Read input, 2.Store input, 3. Perform operations
 
-        public Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
+        /// <summary>
+        /// Example of Inheritance
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="price"></param>
+        /// <param name="LicensePlate"></param>
+        /// <param name="Type"></param>
+        /// <returns></returns>
+        private Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
         {
             return new Vehicle(id, price, LicensePlate, Type);
         }

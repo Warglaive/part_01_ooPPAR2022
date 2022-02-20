@@ -1,9 +1,10 @@
-﻿using CarDealerScenario.Enums;
+﻿using CarDealerScenario.Entities;
+using CarDealerScenario.Enums;
 using CustomExceptions;
 
 namespace CarDealerScenario
 {
-    internal class Vehicle
+    internal class Vehicle : VehicleInterface
     {
         private const int MaxVehiclePrice = 100000000;
         private const int MinVehiclePrice = 0;
@@ -54,6 +55,8 @@ namespace CarDealerScenario
                 this.PriceRanges = PriceRange.Expensive;
             }
         }
+
+        
         //public void SetPrice(decimal price)
         //{
         //    this.Price = price;
