@@ -6,13 +6,13 @@ namespace CarDealerScenario.BusinessLogic
     /// </summary>
     internal class CarDealer : CarDealerInheritanceExample
     {
-        List<Vehicle> VehiclesList = new List<Vehicle>();
+        readonly List<Vehicle> VehiclesList = new();
         //TODO: 1. Read input, 2.Store input, 3. Perform operations
         //Example of Inheritance
         /// <summary>
         /// Create vehicle and add it to the list
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Created vehicle for test purposes</returns>
         public new Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
         {
             var vehicle = new Vehicle(id, price, LicensePlate, Type);
@@ -23,11 +23,11 @@ namespace CarDealerScenario.BusinessLogic
         /// Add vehicle to list
         /// </summary>
         /// <param name="vehicle"></param>
-        /// <returns>Return added Vehicle for test purposes</returns>
-        public Vehicle AddVehicle(Vehicle vehicle)
+        /// <returns>Return VehiclesList for test purposes</returns>
+        public List<Vehicle> AddVehicle(Vehicle vehicle)
         {
             VehiclesList.Add(vehicle);
-            return vehicle;
+            return this.VehiclesList;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace CarDealerScenario.BusinessLogic
         /// increase all prices with a certain percentage
         /// </summary>
         /// <param name="value"></param>
-        public decimal IncreaseAllPricesByPercent(decimal value)
+        public List<Vehicle> IncreaseAllPricesByPercent(decimal value)
         {
             Console.WriteLine("Current vehicles details: ");
             //print old prices
@@ -98,21 +98,24 @@ namespace CarDealerScenario.BusinessLogic
             this.VehiclesList.ForEach(x => x.Price = x.Price + (x.Price * valueToPercent));
             //print new prices
             PrintVehiclesList();
-            return value;
+
+            //return updated list of vehicles
+
+            return this.VehiclesList;
         }
 
         /// <summary>
         /// search for a vehicle based on licence
         /// </summary>
         /// <param name="licensePlate"></param>
-        public string SearchVehicleByLicensePlate(string licensePlate)
+        public Vehicle SearchVehicleByLicensePlate(string licensePlate)
         {
             Console.WriteLine($"Searching for vehicle with license plate number {licensePlate}...");
             Vehicle vehicle = this.VehiclesList.Find(x => x.LicensePlate == licensePlate);
             Console.WriteLine("Vehicle FOUND! Printing details...");
             Console.WriteLine($"Id = { vehicle.Id}; Price = { vehicle.Price}; LicensePlate = { vehicle.LicensePlate};" +
                 $" Type = { vehicle.Type}; Price range = { vehicle.PriceRange }");
-            return licensePlate;
+            return vehicle;
         }
 
 

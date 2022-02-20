@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarDealerScenario.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -104,7 +105,7 @@ namespace CarDealerScenario.BusinessLogic
             Console.WriteLine("5) - Get vehicle price by Id");
             Console.WriteLine("6) - Increase ALL vehicles prices by certain percent");
             Console.WriteLine("7) - Search a vehicle by license plate");
-
+            Console.WriteLine("8) - Search for a vehicle in a specific price range");
             //TODO:
             switch (Console.ReadLine())
             {
@@ -140,6 +141,12 @@ namespace CarDealerScenario.BusinessLogic
                     var licensePlate = Console.ReadLine();
                     this.CarDealer.SearchVehicleByLicensePlate(licensePlate);
                     ShowCarDealerMenu();
+                    break;
+                case "8":
+                    Console.WriteLine("Enter price range(Cheap, Mid, Expensive)");
+                    PriceRange priceRange;
+                    Enum.TryParse(Console.ReadLine(), out priceRange);
+                    this.CarDealer.SearchVehicleInAPriceRange(priceRange);
                     break;
                 default:
                     break;
