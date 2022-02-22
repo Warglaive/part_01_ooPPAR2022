@@ -80,5 +80,16 @@ namespace TestCarDealer
             int actualResult = CarDealer.GetNumberOfVehicles();
             Assert.AreEqual(expectedResult, actualResult);
         }
+        [TestMethod]
+        public void PrintVehiclesCountTest()
+        {
+            Vehicle vehicle2 = CarDealer.CreateVehicle(2, 85.5m, "TestPlates", VehicleType.Car);
+            Vehicle vehicle3 = CarDealer.CreateVehicle(3, 85.5m, "TestPlates", VehicleType.Truck);
+            Vehicle vehicle4 = CarDealer.CreateVehicle(4, 85.5m, "TestPlates", VehicleType.Truck);
+            Vehicle vehicle5 = CarDealer.CreateVehicle(5, 85.5m, "TestPlates", VehicleType.Truck);
+            string expectedResult = "Vehicles count: 4";
+            Assert.AreEqual($"Vehicles count: {CarDealer.GetNumberOfVehicles()}", expectedResult);
+
+        }
     }
 }

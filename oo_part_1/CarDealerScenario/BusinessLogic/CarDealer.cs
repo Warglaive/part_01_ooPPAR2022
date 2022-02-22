@@ -56,9 +56,11 @@ namespace CarDealerScenario.BusinessLogic
             return vehiclesCount;
         }
 
-        private void PrintVehiclesCount(int vehiclesCount)
+        private string PrintVehiclesCount(int vehiclesCount)
         {
-            Console.WriteLine($"Vehicles count: {vehiclesCount}");
+            string result = $"Vehicles count: {vehiclesCount}";
+            Console.WriteLine(result);
+            return result;
         }
 
         /// <summary>
