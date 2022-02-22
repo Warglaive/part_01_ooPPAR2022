@@ -114,5 +114,13 @@ namespace TestCarDealer
             Assert.AreEqual(actual, expected);
 
         }
+        [TestMethod]
+        public void SearchVehicleByLicensePlateTest()
+        {
+            CarDealer.CreateVehicle(1, 100, "TestPlates", VehicleType.Car);
+            var expectedOutput = new Vehicle(1, 100, "TestPlates", VehicleType.Car).LicensePlate;
+            var actualOutput = CarDealer.SearchVehicleByLicensePlate("TestPlates").LicensePlate;
+            Assert.AreEqual(expectedOutput, actualOutput);
+        }
     }
 }
