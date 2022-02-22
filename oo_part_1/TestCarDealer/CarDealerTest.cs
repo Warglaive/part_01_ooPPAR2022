@@ -1,13 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CarDealerScenario;
 using CarDealerScenario.BusinessLogic;
+using System.Collections.Generic;
 
 namespace TestCarDealer
 {
     [TestClass]
     public class CarDealerTest
     {
-        public CarDealer CarDealer;
+        public CarDealer? CarDealer;
         [TestInitialize]
         public void Init()
         {
@@ -21,7 +22,7 @@ namespace TestCarDealer
             long id = 1;
             decimal price = 123;
             string licensePlate = "asda";
-            var type = CarDealerScenario.VehicleType.Car;
+            var type = VehicleType.Car;
 
 
             Vehicle vehicle = this.CarDealer.CreateVehicle(id, price, licensePlate, type);
@@ -35,13 +36,31 @@ namespace TestCarDealer
             long id = 1;
             decimal price = 123;
             string licensePlate = "asda";
-            var type = CarDealerScenario.VehicleType.Car;
+            var type = VehicleType.Car;
 
-            Vehicle vehicle = this.CarDealer.CreateVehicle(id, price, licensePlate, type);
+            Vehicle vehicle = CarDealer.CreateVehicle(id, price, licensePlate, type);
 
-            var listResult = this.CarDealer.AddVehicle(vehicle);
+            var listResult = CarDealer.AddVehicle(vehicle);
 
             Assert.AreEqual(listResult[0], vehicle);
+        }
+        [TestMethod]
+        public void PrintVehiclesListTest()
+        {
+            long id = 1;
+            decimal price = 123;
+            string licensePlate = "asda";
+            var type = VehicleType.Car;
+
+            Vehicle vehicle = CarDealer.CreateVehicle(id, price, licensePlate, type);
+            Vehicle vehicle2 = CarDealer.CreateVehicle(2, 85.5m, "TestPlates", VehicleType.Truck);
+
+            List<Vehicle> listResult = new();
+            listResult.Add(vehicle);
+            listResult.Add(vehicle2);
+
+            string expectedResult = $"";
+            string actualResult = this.CarDealer.PrintVehiclesList();
         }
     }
 }
