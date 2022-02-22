@@ -4,7 +4,7 @@ namespace CarDealerScenario.BusinessLogic
     /// <summary>
     /// Create, save, list, print Vehicle operations
     /// </summary>
-    internal class CarDealer : CarDealerInheritanceExample
+    public class CarDealer : CarDealerInheritanceExample
     {
         readonly List<Vehicle> VehiclesList = new();
         //TODO: 1. Read input, 2.Store input, 3. Perform operations
@@ -35,8 +35,8 @@ namespace CarDealerScenario.BusinessLogic
         /// </summary>
         public void PrintVehiclesList()
         {
-            VehiclesList.ForEach(x => Console.WriteLine($"Id = {x.Id}; Price = {x.Price}; LicensePlate = {x.LicensePlate}; Type = {x.Type}; Price range = {x.PriceRange}"));
-            // Engine.Start();
+            VehiclesList.ForEach(x => Console.WriteLine($"Id = {x.Id}; Price = {x.Price};" +
+                $" LicensePlate = {x.LicensePlate}; Type = {x.Type}; Price range = {x.PriceRange}"));
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿namespace CarDealerScenario.BusinessLogic
 {
-    internal class CarDealerInheritanceExample
+    public class CarDealerInheritanceExample
     {
         List<Vehicle> VehiclesList = new List<Vehicle>();
 

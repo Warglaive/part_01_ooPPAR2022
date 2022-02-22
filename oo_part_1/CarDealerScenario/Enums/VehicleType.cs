@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarDealerScenario
+﻿namespace CarDealerScenario
 {
-    internal enum VehicleType
+    public enum VehicleType
     {
         Unassigned, Car, Truck
     }

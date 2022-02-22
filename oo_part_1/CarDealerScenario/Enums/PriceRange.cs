@@ -11,7 +11,7 @@ namespace CarDealerScenario.Enums
     /// Mid - from 10 000 to 100 000
     /// Expensive - more than 100 000
     /// </summary>
-    internal enum PriceRange
+    public enum PriceRange
     {
         Cheap, Mid, Expensive
     }
