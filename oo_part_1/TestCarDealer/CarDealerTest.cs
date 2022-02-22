@@ -89,6 +89,29 @@ namespace TestCarDealer
             Vehicle vehicle5 = CarDealer.CreateVehicle(5, 85.5m, "TestPlates", VehicleType.Truck);
             string expectedResult = "Vehicles count: 4";
             Assert.AreEqual($"Vehicles count: {CarDealer.GetNumberOfVehicles()}", expectedResult);
+        }
+        [TestMethod]
+        public void GetTotalValueOfVehiclesTest()
+        {
+            Vehicle vehicle = CarDealer.CreateVehicle(2, 85.5m, "TestPlates", VehicleType.Car);
+            Vehicle vehicle1 = CarDealer.CreateVehicle(3, 85.5m, "TestPlates", VehicleType.Truck);
+            decimal expected = vehicle.Price + vehicle1.Price;
+            decimal actual = CarDealer.GetTotalValueOfVehicles();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void GetVehiclePriceTest()
+        {
+            Vehicle vehicle = CarDealer.CreateVehicle(2, 85.5m, "TestPlates", VehicleType.Car);
+            Assert.AreEqual(CarDealer.GetVehiclePrice(vehicle.Id), 85.5m);
+        }
+        [TestMethod]
+        public void IncreaseAllPricesByPercentTest()
+        {
+            CarDealer.CreateVehicle(1, 100, "TestPlates", VehicleType.Car);
+            var actual = CarDealer.IncreaseAllPricesByPercent(20)[0].Price;
+            var expected = 120m;
+            Assert.AreEqual(actual, expected);
 
         }
     }
