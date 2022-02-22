@@ -63,5 +63,22 @@ namespace TestCarDealer
                 $" LicensePlate = {vehicle.LicensePlate}; Type = {vehicle.Type}; Price range = {vehicle.PriceRange}";
             string actualResult = this.CarDealer.PrintVehiclesList();
         }
+        [TestMethod]
+        public void GetNumberOfVehiclesTest()
+        {
+            long id = 1;
+            decimal price = 123;
+            string licensePlate = "asda";
+            var type = VehicleType.Car;
+
+            Vehicle vehicle = CarDealer.CreateVehicle(id, price, licensePlate, type);
+            Vehicle vehicle2 = CarDealer.CreateVehicle(2, 85.5m, "TestPlates", VehicleType.Car);
+            Vehicle vehicle3 = CarDealer.CreateVehicle(3, 85.5m, "TestPlates", VehicleType.Truck);
+            Vehicle vehicle4 = CarDealer.CreateVehicle(4, 85.5m, "TestPlates", VehicleType.Truck);
+            Vehicle vehicle5 = CarDealer.CreateVehicle(5, 85.5m, "TestPlates", VehicleType.Truck);
+            int expectedResult = 5;
+            int actualResult = CarDealer.GetNumberOfVehicles();
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }

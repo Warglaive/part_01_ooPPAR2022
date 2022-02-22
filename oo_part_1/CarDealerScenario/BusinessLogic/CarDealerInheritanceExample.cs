@@ -2,7 +2,7 @@
 {
     public class CarDealerInheritanceExample
     {
-        List<Vehicle> VehiclesList = new List<Vehicle>();
+        List<Vehicle> VehiclesList = new();
 
         public Vehicle CreateVehicle(long id, decimal price, string LicensePlate, VehicleType Type)
         {
