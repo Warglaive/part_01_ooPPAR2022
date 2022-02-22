@@ -1,4 +1,6 @@
 ﻿using CarDealerScenario.Enums;
+using System.Text;
+
 namespace CarDealerScenario.BusinessLogic
 {
     /// <summary>
@@ -33,10 +35,15 @@ namespace CarDealerScenario.BusinessLogic
         /// <summary>
         /// print a list of Vehicles and their most important characteristics
         /// </summary>
-        public void PrintVehiclesList()
+        public string PrintVehiclesList()
         {
-            VehiclesList.ForEach(x => Console.WriteLine($"Id = {x.Id}; Price = {x.Price};" +
+            StringBuilder builder = new StringBuilder();
+
+            VehiclesList.ForEach(x => builder.AppendLine($"Id = {x.Id}; Price = {x.Price};" +
                 $" LicensePlate = {x.LicensePlate}; Type = {x.Type}; Price range = {x.PriceRange}"));
+
+            Console.WriteLine(builder);
+            return builder.ToString();
         }
 
         /// <summary>
