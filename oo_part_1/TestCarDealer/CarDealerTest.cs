@@ -59,7 +59,8 @@ namespace TestCarDealer
             listResult.Add(vehicle);
             listResult.Add(vehicle2);
 
-            string expectedResult = $"";
+            string expectedResult = $"Id = {vehicle.Id}; Price = {vehicle.Price};" +
+                $" LicensePlate = {vehicle.LicensePlate}; Type = {vehicle.Type}; Price range = {vehicle.PriceRange}";
             string actualResult = this.CarDealer.PrintVehiclesList();
         }
     }
