@@ -1,11 +1,20 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CarDealerScenario;
+using CarDealerScenario.BusinessLogic;
 
 namespace TestCarDealer
 {
     [TestClass]
     public class CarDealerTest
     {
+        public CarDealer CarDealer;
+        [TestInitialize]
+        public void Init()
+        {
+            this.CarDealer = new CarDealer();
+        }
+
+
         [TestMethod]
         public void CreateVehicleTest()
         {
@@ -15,7 +24,9 @@ namespace TestCarDealer
             var type = CarDealerScenario.VehicleType.Car;
 
 
-            Vehicle? vehicle = new Vehicle(id, price, licensePlate, type);
+            Vehicle vehicle = this.CarDealer.CreateVehicle(id, price, licensePlate, type);
+
+            Assert.IsInstanceOfType(vehicle, typeof(Vehicle));
         }
     }
 }
