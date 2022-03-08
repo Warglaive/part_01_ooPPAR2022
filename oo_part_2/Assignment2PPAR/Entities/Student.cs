@@ -8,6 +8,11 @@ namespace Assignment2.Entities
         private string cohort;
         private string studentClass;
 
+        public Student(string firstName, string lastName, string email, string nationality)
+            : base(firstName, lastName, email, nationality)
+        {
+        }
+
         public string StudyProgram
         {
             get => studyProgram;

@@ -8,7 +8,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
         public static void Main()
         {
             //use reflection to get Entities data
-            // User user = new();
+            User Lecturer = new Lecturer("asd", "asd", DateTime.Now);
             var types = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)));
             foreach (var type in types)
             {
