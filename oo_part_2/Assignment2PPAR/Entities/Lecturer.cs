@@ -9,7 +9,7 @@ namespace Assignment2.Entities
         private string lecturerAbbreviation;
         private DateTime dateStarted;
 
-        public Lecturer(string firstName, string lastName, string email, string nationality, string phoneNumberWork, string lecturerAbbreviation, DateTime dateStarted)
+        public Lecturer(string firstName, string lastName, string email, string nationality, string phoneNumberWork, DateTime dateStarted)
             : base(firstName, lastName, email, nationality)
         {
             this.phoneNumberWork = phoneNumberWork;
