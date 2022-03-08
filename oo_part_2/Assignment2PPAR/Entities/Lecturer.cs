@@ -4,9 +4,9 @@ namespace Assignment2.Entities
 {
     public class Lecturer : User, ILecturer
     {
-        public string phoneNumberWork;
-        public string lecturerAbbreviation;
-        public DateTime dateStarted;
+        private string phoneNumberWork;
+        private string lecturerAbbreviation;
+        private DateTime dateStarted;
 
         public string PhoneNumberWork
         {

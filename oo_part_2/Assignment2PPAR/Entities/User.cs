@@ -4,18 +4,16 @@ namespace Assignment2.Entities
 {
     public abstract class User : IUser
     {
+        private int id;
         //add fields according to properties
-        //public string type;
-        public string firstName;
-        public string lastName;
-        public string email;
-        public string nationality;
+        private string firstName;
+        private string lastName;
+        private string email;
+        private string nationality;
 
-        /* public string Type
-         {
-             //may not work, test it
-             get => type; set => type = value;
-         }*/
+
+        public int Id { get => id; }
+
         public string FirstName
         {
             get => firstName; set => firstName = value;
