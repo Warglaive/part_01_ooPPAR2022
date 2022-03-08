@@ -2,7 +2,7 @@
 
 namespace Assignment2.Entities
 {
-    public class Student : User, IUser, IStudent
+    public class Student : User, IStudent
     {
         //students
         public string studyProgram;
