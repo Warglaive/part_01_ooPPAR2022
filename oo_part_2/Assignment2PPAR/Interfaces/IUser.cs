@@ -7,13 +7,6 @@
         string LastName { get; set; }
         string Email { get; set; }
 
-        /* //lecturers
-         string PhoneNumberWork { get; set; }
-         //lecturers
-         string LecturerAbbreviation { get; set; }*/
-
         string Nationality { get; set; }
-        /*  //lecturers
-          DateTime DateStarted { get; set; }*/
     }
 }
