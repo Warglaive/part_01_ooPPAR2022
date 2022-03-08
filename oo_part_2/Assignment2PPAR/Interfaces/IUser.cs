@@ -7,9 +7,9 @@
         string LastName { get; set; }
         string Email { get; set; }
         //students only
-        string StudyProgram { get; set; }
-        string Cohort { get; set; }
-        string StudentClass { get; set; }
+        /*  string StudyProgram { get; set; }*/
+        /*  string Cohort { get; set; }*/
+        /*  string StudentClass { get; set; }*/
 
         //lecturers
         string PhoneNumberWork { get; set; }
