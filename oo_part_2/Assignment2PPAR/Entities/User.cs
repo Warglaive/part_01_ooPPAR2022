@@ -9,60 +9,63 @@ namespace Assignment2.Entities
 {
     public abstract class User : IUser
     {
+        //add fields according to properties
+        public string type;
+        public string firstName;
+        public string lastName;
+        public string email;
+        public string studyProgram;
+        public string cohort;
+        public string studentClass;
+        public string phoneNumberWork;
+        public string lecturerAbbreviation;
+        public string nationality;
+        public DateTime dateStarted;
         public string Type
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            //may not work, test it
+            get => type; set => type = value;
         }
         public string FirstName
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => firstName; set => firstName = value;
         }
         public string LastName
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+
+            get => lastName; set => lastName = value;
         }
         public string Email
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => email; set => email = value;
         }
         public string StudyProgram
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => studyProgram; set => studyProgram = value;
         }
         public string Cohort
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => cohort; set => cohort = value;
         }
-        public string Class
+        public string StudentClass
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => studentClass; set => studentClass = value;
         }
         public string PhoneNumberWork
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => phoneNumberWork; set => phoneNumberWork = value;
         }
         public string LecturerAbbreviation
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => lecturerAbbreviation; set => lecturerAbbreviation = value;
         }
         public string Nationality
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => nationality; set => nationality = value;
         }
         public DateTime DateStarted
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => dateStarted; set => dateStarted = value;
         }
     }
 }
