@@ -20,7 +20,11 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void PrintFirstMenu()
         {
+            //TODO: Print menu and start Create user
+            while (Console.ReadLine() != null)
+            {
 
+            }
         }
     }
 }
