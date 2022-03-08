@@ -9,9 +9,9 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
         {
             //use reflection to get Entities data
             // User user = new();
-            System.Type type = typeof(User);
-            Console.WriteLine(type.Name);
-            var a = type.Attributes;
+            var type = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)));
+            // Console.WriteLine(type.Name);
+            //  var a = type.Attributes;
         }
     }
 }
