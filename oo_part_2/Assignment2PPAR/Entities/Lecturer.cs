@@ -13,7 +13,7 @@ namespace Assignment2.Entities
             : base(firstName, lastName, email, nationality)
         {
             this.phoneNumberWork = phoneNumberWork;
-            this.lecturerAbbreviation = AssignLecturerAbbreviation(firstName, lastName);
+            this.lecturerAbbreviation = "mr.";/*AssignLecturerAbbreviation(firstName, lastName);*/
             this.dateStarted = dateStarted;
         }
 
