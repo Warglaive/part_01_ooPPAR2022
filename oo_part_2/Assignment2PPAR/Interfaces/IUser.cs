@@ -11,13 +11,13 @@
         /*  string Cohort { get; set; }*/
         /*  string StudentClass { get; set; }*/
 
-        //lecturers
-        string PhoneNumberWork { get; set; }
-        //lecturers
-        string LecturerAbbreviation { get; set; }
+        /* //lecturers
+         string PhoneNumberWork { get; set; }
+         //lecturers
+         string LecturerAbbreviation { get; set; }*/
 
         string Nationality { get; set; }
-        //lecturers
-        DateTime DateStarted { get; set; }
+        /*  //lecturers
+          DateTime DateStarted { get; set; }*/
     }
 }

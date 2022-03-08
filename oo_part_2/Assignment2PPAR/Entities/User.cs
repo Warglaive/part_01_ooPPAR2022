@@ -9,19 +9,21 @@ namespace Assignment2.Entities
         public string firstName;
         public string lastName;
         public string email;
-        //students
-        public string studyProgram;
-        //students
-        public string cohort;
-        //students
-        public string studentClass;
+        /*        //students
+                public string studyProgram;
+                //students
+                public string cohort;
+                //students
+                public string studentClass;
+                //lecturers
+                public string phoneNumberWork;*/
         //lecturers
-        public string phoneNumberWork;
-        //lecturers
-        public string lecturerAbbreviation;
+        /*        public string lecturerAbbreviation;
+        */
         public string nationality;
         //lecturers
-        public DateTime dateStarted;
+        /*        public DateTime dateStarted;
+        */
         public string Type
         {
             //may not work, test it
@@ -40,33 +42,33 @@ namespace Assignment2.Entities
         {
             get => email; set => email = value;
         }
-        public string StudyProgram
-        {
-            get => studyProgram; set => studyProgram = value;
-        }
-        public string Cohort
-        {
-            get => cohort; set => cohort = value;
-        }
-        public string StudentClass
-        {
-            get => studentClass; set => studentClass = value;
-        }
-        public string PhoneNumberWork
-        {
-            get => phoneNumberWork; set => phoneNumberWork = value;
-        }
-        public string LecturerAbbreviation
-        {
-            get => lecturerAbbreviation; set => lecturerAbbreviation = value;
-        }
+        /* public string StudyProgram
+         {
+             get => studyProgram; set => studyProgram = value;
+         }
+         public string Cohort
+         {
+             get => cohort; set => cohort = value;
+         }
+         public string StudentClass
+         {
+             get => studentClass; set => studentClass = value;
+         }*/
+        /* public string PhoneNumberWork
+         {
+             get => phoneNumberWork; set => phoneNumberWork = value;
+         }
+         public string LecturerAbbreviation
+         {
+             get => lecturerAbbreviation; set => lecturerAbbreviation = value;
+         }*/
         public string Nationality
         {
             get => nationality; set => nationality = value;
         }
-        public DateTime DateStarted
-        {
-            get => dateStarted; set => dateStarted = value;
-        }
+        /* public DateTime DateStarted
+         {
+             get => dateStarted; set => dateStarted = value;
+         }*/
     }
 }
