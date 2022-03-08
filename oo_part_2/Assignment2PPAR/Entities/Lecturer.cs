@@ -5,7 +5,6 @@ namespace Assignment2.Entities
     public class Lecturer : User, ILecturer
     {
         public string phoneNumberWork;
-
         public string lecturerAbbreviation;
         public DateTime dateStarted;
 

@@ -4,11 +4,8 @@ namespace Assignment2.Entities
 {
     public class Student : User, IStudent
     {
-        //students
         public string studyProgram;
-        //students
         public string cohort;
-        //students
         public string studentClass;
 
         public string StudyProgram
