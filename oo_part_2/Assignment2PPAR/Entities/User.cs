@@ -1,9 +1,4 @@
 ﻿using Assignment2.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment2.Entities
 {
@@ -14,12 +9,18 @@ namespace Assignment2.Entities
         public string firstName;
         public string lastName;
         public string email;
+        //students
         public string studyProgram;
+        //students
         public string cohort;
+        //students
         public string studentClass;
+        //lecturers
         public string phoneNumberWork;
+        //lecturers
         public string lecturerAbbreviation;
         public string nationality;
+        //lecturers
         public DateTime dateStarted;
         public string Type
         {
