@@ -8,9 +8,12 @@ namespace Assignment2.Entities
         private string cohort;
         private string studentClass;
 
-        public Student(string firstName, string lastName, string email, string nationality)
+        public Student(string firstName, string lastName, string email, string nationality, string studyProgram, string cohort, string studentClass)
             : base(firstName, lastName, email, nationality)
         {
+            this.studyProgram = studyProgram;
+            this.cohort = cohort;
+            this.studentClass = studentClass;
         }
 
         public string StudyProgram
