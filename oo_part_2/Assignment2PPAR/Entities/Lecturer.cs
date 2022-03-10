@@ -1,4 +1,5 @@
 ﻿using Assignment2.Interfaces;
+using System.Globalization;
 
 namespace Assignment2.Entities
 {
@@ -8,13 +9,13 @@ namespace Assignment2.Entities
         //calculated value
         private string lecturerAbbreviation;
         private DateTime dateStarted;
-
-        public Lecturer(string firstName, string lastName, string email, string nationality, string phoneNumberWork, DateTime dateStarted)
+        private const string dateTimeFormat = "MM/dd/yyyy";
+        public Lecturer(string firstName, string lastName, string email, string nationality, string phoneNumberWork, string dateStarted)
             : base(firstName, lastName, email, nationality)
         {
             this.phoneNumberWork = phoneNumberWork;
             this.lecturerAbbreviation = "mr.";/*AssignLecturerAbbreviation(firstName, lastName);*/
-            this.dateStarted = dateStarted;
+            this.dateStarted = DateTime.ParseExact(dateStarted, dateTimeFormat, CultureInfo.InvariantCulture);
         }
 
         private string? AssignLecturerAbbreviation(string firstName, string lastName)

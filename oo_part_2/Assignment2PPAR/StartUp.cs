@@ -55,11 +55,14 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                 //get first type fields and make user fill them
                 case "0":
                     var typeProperties = userTypes[selectedTypeAsInt].GetProperties();
-
+                    var consoleInputArguments = new List<object>();
                     foreach (var property in typeProperties)
                     {
                         Console.WriteLine($"Add {property.Name}: ");
-                        property.SetValue(property, Console.ReadLine());
+                        //add to list
+                        //pass list to lecturer's constructor
+                        //array[2]{"
+                       // property.SetValue(property, Console.ReadLine());
                     }
                     Console.WriteLine($"Please enter {selectedTypeAsInt}");
                     break;
