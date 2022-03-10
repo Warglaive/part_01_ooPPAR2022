@@ -53,17 +53,22 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             switch (inputSelectedType)
             {
                 //get first type fields and make user fill them
+
                 case "0":
-                    var typeProperties = userTypes[selectedTypeAsInt].GetProperties();
+                    var currentType = userTypes[selectedTypeAsInt];
+
+                    var typeProperties = currentType.GetProperties();
                     var consoleInputArguments = new List<object>();
-                    foreach (var property in typeProperties)
-                    {
-                        Console.WriteLine($"Add {property.Name}: ");
-                        //add to list
-                        consoleInputArguments.Add(Console.ReadLine());
-                    }
+                    /* foreach (var property in typeProperties)
+                     {
+                         Console.WriteLine($"Add {property.Name}: ");
+                         //add to list
+                         consoleInputArguments.Add(Console.ReadLine());
+                     }*/
                     //pass list to type's constructor
-                    
+                    var typeInstance = currentType.Assembly.CreateInstance(currentType.Name);
+                    Activator.CreateInstance(currentType.GetType(), args: consoleInputArguments);
+                    //currentType.Assembly.CreateInstance.
                     Console.WriteLine($"Please enter {selectedTypeAsInt}");
                     break;
                 default:
