@@ -5,11 +5,22 @@ namespace Assignment2.Entities
 {
     public class Lecturer : User, ILecturer
     {
+        private const string dateTimeFormat = "MM/dd/yyyy";
+
         private string phoneNumberWork;
         //calculated value
         private string lecturerAbbreviation;
         private DateTime dateStarted;
-        private const string dateTimeFormat = "MM/dd/yyyy";
+
+
+
+        //test ctor
+        /*public Lecturer(string firstName, string lastName, string email, string nationality)
+        : base(firstName, lastName, email, nationality)
+        { }*/
+
+
+
         public Lecturer(string firstName, string lastName, string email, string nationality, string phoneNumberWork, string dateStarted)
             : base(firstName, lastName, email, nationality)
         {

@@ -57,17 +57,18 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                 case "0":
                     var currentType = userTypes[selectedTypeAsInt];
 
-                    var typeProperties = currentType.GetProperties();
+                    var typeProperties = currentType.GetConstructors();
                     var consoleInputArguments = new List<object>();
-                    /* foreach (var property in typeProperties)
-                     {
-                         Console.WriteLine($"Add {property.Name}: ");
-                         //add to list
-                         consoleInputArguments.Add(Console.ReadLine());
-                     }*/
+                    foreach (var property in typeProperties)
+                    {
+                        Console.WriteLine($"Add {property.Name}: ");
+                        //add to list
+                        consoleInputArguments.Add(Console.ReadLine());
+                    }
                     //pass list to type's constructor
-                    var typeInstance = currentType.Assembly.CreateInstance(currentType.Name);
-                    Activator.CreateInstance(currentType.GetType(), args: consoleInputArguments);
+                    var constructrs = currentType.GetConstructors();
+                    var arr = consoleInputArguments.ToArray();
+                    Activator.CreateInstance(currentType, arr);
                     //currentType.Assembly.CreateInstance.
                     Console.WriteLine($"Please enter {selectedTypeAsInt}");
                     break;
