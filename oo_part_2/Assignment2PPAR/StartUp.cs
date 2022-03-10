@@ -46,8 +46,16 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             Console.WriteLine("Which type of User would you like to create? ");
             for (int i = 0; i < userTypes.Count; i++)
             {
-                Console.WriteLine($"{i}. {userTypes[i].Name}");
+                int counter = i + 1;
+                Console.WriteLine($"{counter}. {userTypes[i].Name}");
             }
+            var selectedType = Console.ReadLine();
+           /* switch (selectedType)
+            {
+                case ""
+                default:
+                    break;
+            }*/
             //get all fields for the selected type and make the user fill them
             //create selected user type
         }
