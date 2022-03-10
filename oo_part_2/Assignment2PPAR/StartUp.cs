@@ -41,7 +41,13 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
         private static void CreateUser()
         {
             //get all User types and make the user select which to create
-            var userTypes = typeof(User).Assembly.GetTypes().Where(x=>x.IsSubclassOf(typeof(User)));
+            var userTypes = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)))
+                .ToList();
+            Console.WriteLine("Which type of User would you like to create? ");
+            for (int i = 0; i < userTypes.Count; i++)
+            {
+                Console.WriteLine($"{i}. {userTypes[i].Name}");
+            }
             //get all fields for the selected type and make the user fill them
             //create selected user type
         }
