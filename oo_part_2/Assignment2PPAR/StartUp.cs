@@ -60,10 +60,10 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                     {
                         Console.WriteLine($"Add {property.Name}: ");
                         //add to list
-                        //pass list to lecturer's constructor
-                        //array[2]{"
-                       // property.SetValue(property, Console.ReadLine());
+                        consoleInputArguments.Add(Console.ReadLine());
                     }
+                    //pass list to type's constructor
+                    
                     Console.WriteLine($"Please enter {selectedTypeAsInt}");
                     break;
                 default:
