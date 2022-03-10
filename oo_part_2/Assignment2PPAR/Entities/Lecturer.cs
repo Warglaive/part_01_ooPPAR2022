@@ -5,7 +5,7 @@ namespace Assignment2.Entities
 {
     public class Lecturer : User, ILecturer
     {
-        private const string dateTimeFormat = "MM/dd/yyyy";
+        private const string dateTimeFormat = "dd-MM-yyyy";
 
         private string phoneNumberWork;
         //calculated value
