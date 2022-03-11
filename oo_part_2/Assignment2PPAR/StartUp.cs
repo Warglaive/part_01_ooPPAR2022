@@ -46,36 +46,30 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             Console.WriteLine("Which type of User would you like to create? ");
             for (int i = 0; i < userTypes.Count; i++)
             {
-                Console.WriteLine($"{i}. {userTypes[i].Name}");
+                Console.WriteLine($"{userTypes[i].Name}");
             }
             string inputSelectedType = Console.ReadLine();
-            var selectedTypeAsInt = int.Parse(inputSelectedType);
-            switch (inputSelectedType)
+
+            //TODO: Remove switch case and make user input specific type of User to be created
+
+            var currentType = userTypes.Where(x=>x.Name.Equals(inputSelectedType)).FirstOrDefault();
+
+            // var typeProperties = currentType.GetProperties();
+            var consoleInputArguments = new List<object>();
+            var constructrs = currentType.GetConstructors();
+            var firstCtor = constructrs[0];
+            foreach (var parameter in firstCtor.GetParameters())
             {
-                //get first type fields and make user fill them
-
-                case "0":
-                    var currentType = userTypes[selectedTypeAsInt];
-
-                    // var typeProperties = currentType.GetProperties();
-                    var consoleInputArguments = new List<object>();
-                    var constructrs = currentType.GetConstructors();
-                    var firstCtor = constructrs[0];
-                    foreach (var parameter in firstCtor.GetParameters())
-                    {
-                        Console.WriteLine($"Add {parameter.Name}: ");
-                        //add to list
-                        consoleInputArguments.Add(Console.ReadLine());
-                    }
-                    //pass list to type's constructor
-                    var arr = consoleInputArguments.ToArray();
-                    var userInstance = Activator.CreateInstance(currentType, arr);
-                    //currentType.Assembly.CreateInstance.
-                    Console.WriteLine($"Please enter {selectedTypeAsInt}");
-                    break;
-                default:
-                    break;
+                Console.WriteLine($"Add {parameter.Name}: ");
+                //add to list
+                consoleInputArguments.Add(Console.ReadLine());
             }
+            //pass list to type's constructor
+            var arr = consoleInputArguments.ToArray();
+            var userInstance = Activator.CreateInstance(currentType, arr);
+            //currentType.Assembly.CreateInstance.
+            Console.WriteLine($"Please enter {currentType.Name}");
+
             //get all fields for the selected type and make the user fill them
             //create selected user type
         }
