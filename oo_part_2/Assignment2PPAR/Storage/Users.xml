@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><Lecturer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><FirstName>asd</FirstName><LastName>asd</LastName><Email>asd</Email><Nationality>asd</Nationality><PhoneNumberWork>sad</PhoneNumberWork><LecturerAbbreviation>mr.</LecturerAbbreviation><DateStarted>01-01-1991</DateStarted></Lecturer>
+<?xml version="1.0" encoding="utf-8"?>
+<Lecturer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<FirstName>asd</FirstName>
+	<LastName>asd</LastName>
+	<Email>asd</Email>
+	<Nationality>asd</Nationality>
+	<PhoneNumberWork>sad</PhoneNumberWork>
+	<LecturerAbbreviation>mr.</LecturerAbbreviation>
+	<DateStarted>01-01-1991</DateStarted>
+</Lecturer>
