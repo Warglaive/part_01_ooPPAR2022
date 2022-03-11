@@ -10,7 +10,7 @@ namespace Assignment2.Entities
         private string? phoneNumberWork;
         //calculated value
         private string? lecturerAbbreviation;
-        private DateTime? dateStarted;
+        private string? dateStarted;
 
 
 
@@ -25,8 +25,8 @@ namespace Assignment2.Entities
         {
             this.phoneNumberWork = phoneNumberWork;
             this.lecturerAbbreviation = "mr.";/*AssignLecturerAbbreviation(firstName, lastName);*/
-            this.dateStarted = DateTime.ParseExact(dateStarted, dateTimeFormat, CultureInfo.InvariantCulture);
-        }
+            this.dateStarted = dateStarted;/*DateTime.ParseExact(dateStarted, dateTimeFormat, CultureInfo.InvariantCulture);
+*/        }
 
         private string? AssignLecturerAbbreviation(string firstName, string lastName)
         {
@@ -45,10 +45,16 @@ namespace Assignment2.Entities
             get => lecturerAbbreviation;
             set => lecturerAbbreviation = value;
         }
-        public DateTime DateStarted
+        public string DateStarted
         {
-            get => DateStarted;
-            set => DateStarted = value;
+            get
+            {
+                return dateStarted;
+            }
+            set
+            {
+                dateStarted = value;
+            }
         }
     }
 }

@@ -72,7 +72,6 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //XmlSerializer xmlSerializer = new(currentType);
 
             XmlSerializer serializer = new XmlSerializer(userInstance.GetType());
-
             TextWriter streamWriter = new StreamWriter(@"D:\part_01_oo-Warglaive\oo_part_2\Assignment2PPAR\Storage\Users.xml");
             serializer.Serialize(streamWriter, userInstance);
             streamWriter.Close();

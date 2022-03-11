@@ -4,7 +4,7 @@
     {
         string PhoneNumberWork { get; set; }
         string LecturerAbbreviation { get; set; }
-        DateTime DateStarted { get; set; }
+        string DateStarted { get; set; }
 
     }
 }
