@@ -1,8 +1,8 @@
 ﻿namespace Assignment2.Interfaces
 {
-    public interface ICommand<T>
+    public interface ICommand
     {
 
-        public delegate void Action<E>(E obj);
+      
     }
 }

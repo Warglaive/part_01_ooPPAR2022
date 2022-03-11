@@ -2,9 +2,24 @@
 
 namespace Assignment2.Entities
 {
-    public class Command<T> : ICommand<T>
+    public class Command
     {
         //Description property
-        public delegate void Action<E>(E obj);
+        public string Description { get; set; }
+
+
+        public Command()
+        {
+            Action<string> printMessageAction;
+
+            printMessageAction = PrintLineOnConsole;
+
+            printMessageAction(this.Description);
+        }
+
+        private static void PrintLineOnConsole(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }
