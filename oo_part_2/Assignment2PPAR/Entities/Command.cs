@@ -8,8 +8,9 @@ namespace Assignment2.Entities
         public string Description { get; set; }
 
 
-        public Command()
+        public Command(string description)
         {
+            this.Description = description;
             Action<string> printMessageAction;
 
             printMessageAction = PrintLineOnConsole;
@@ -17,7 +18,7 @@ namespace Assignment2.Entities
             printMessageAction(this.Description);
         }
 
-        private static void PrintLineOnConsole(string message)
+        public void PrintLineOnConsole(string message)
         {
             Console.WriteLine(message);
         }

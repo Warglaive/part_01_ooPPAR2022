@@ -23,14 +23,17 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void PrintFirstMenu()
         {
-            Command command = new Command();
-            
+            Command command = new Command("Init Command");
+
             //TODO: Print menu and start Create user
-            Console.WriteLine("Please choose an option: ");
-            Console.WriteLine("1. Create user");
-            Console.WriteLine("2. Show overview users in database");
-            Console.WriteLine("3. Show user details");
-            Console.WriteLine("4. Exit application");
+            command.PrintLineOnConsole("Please choose an option: ");
+
+            command.PrintLineOnConsole("1. Create user");
+            command.PrintLineOnConsole("2. Show overview users in database");
+            command.PrintLineOnConsole("3. Show user details");
+            command.PrintLineOnConsole("3. Show user details");
+            command.PrintLineOnConsole("4. Exit application");
+
             var input = Console.ReadLine();
             switch (input)
             {
