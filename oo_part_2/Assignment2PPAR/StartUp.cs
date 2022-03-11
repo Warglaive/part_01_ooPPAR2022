@@ -50,9 +50,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             }
             string inputSelectedType = Console.ReadLine();
 
-            //TODO: Remove switch case and make user input specific type of User to be created
-
-            var currentType = userTypes.Where(x=>x.Name.Equals(inputSelectedType)).FirstOrDefault();
+            var currentType = userTypes.Where(x => x.Name.Equals(inputSelectedType)).FirstOrDefault();
 
             // var typeProperties = currentType.GetProperties();
             var consoleInputArguments = new List<object>();
@@ -67,15 +65,9 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //pass list to type's constructor
             var arr = consoleInputArguments.ToArray();
             var userInstance = Activator.CreateInstance(currentType, arr);
-            //currentType.Assembly.CreateInstance.
-            Console.WriteLine($"Please enter {currentType.Name}");
+            //Save instance to XML
 
-            //get all fields for the selected type and make the user fill them
-            //create selected user type
+
         }
     }
 }
-
-
-/*var a = DateTime.ParseExact("03-10-22", "MM-dd-yy", CultureInfo.InvariantCulture);
-*/
