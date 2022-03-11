@@ -28,6 +28,7 @@ namespace Assignment2.Entities
             this.dateStarted = dateStarted;
         }
 
+
         private string? AssignLecturerAbbreviation(string firstName, string lastName)
         {
             //TODO
@@ -40,11 +41,13 @@ namespace Assignment2.Entities
             set => phoneNumberWork = value;
         }
 
+        [XmlElement(ElementName = "Abbreviation")]
         public string LecturerAbbreviation
         {
             get => lecturerAbbreviation;
             set => lecturerAbbreviation = value;
         }
+        [XmlElement(ElementName = "StartDate")]
         public string DateStarted
         {
             get
