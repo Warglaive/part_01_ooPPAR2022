@@ -1,4 +1,5 @@
 ﻿using Assignment2.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace Assignment2.Entities
 {
@@ -20,6 +21,11 @@ namespace Assignment2.Entities
         {
             this.firstName = firstName;
             this.lastName = lastName;
+            //TODO: Validate Email using own regex
+            string emailValidationRegexPattern = @"^[A-Za-z0-9+_.-]+@(.+)$";
+            Regex regex = new(emailValidationRegexPattern);
+            //check if its a match
+            regex.IsMatch(email);
             this.email = email;
             this.nationality = nationality;
         }
