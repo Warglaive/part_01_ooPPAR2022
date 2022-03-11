@@ -1,4 +1,5 @@
 ﻿using Assignment2.Interfaces;
+using System.Xml.Serialization;
 
 namespace Assignment2.Entities
 {
@@ -23,7 +24,7 @@ namespace Assignment2.Entities
             : base(firstName, lastName, email, nationality)
         {
             this.phoneNumberWork = phoneNumberWork;
-            this.lecturerAbbreviation = "mr.";/*AssignLecturerAbbreviation(firstName, lastName);*/
+            this.lecturerAbbreviation = "Mr.";/*AssignLecturerAbbreviation(firstName, lastName);*/
             this.dateStarted = dateStarted;
         }
 
@@ -32,7 +33,7 @@ namespace Assignment2.Entities
             //TODO
             throw new NotImplementedException();
         }
-
+        [XmlElement(ElementName = "BusinessPhoneNumber")]
         public string PhoneNumberWork
         {
             get => phoneNumberWork;

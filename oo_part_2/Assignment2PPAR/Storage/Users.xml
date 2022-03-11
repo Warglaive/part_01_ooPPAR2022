@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Lecturer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<FirstName>asd</FirstName>
-	<LastName>asd</LastName>
-	<Email>asd</Email>
-	<Nationality>asd</Nationality>
-	<PhoneNumberWork>sad</PhoneNumberWork>
-	<LecturerAbbreviation>mr.</LecturerAbbreviation>
-	<DateStarted>01-01-1991</DateStarted>
+	<FirstName>Nov lekcioner</FirstName>
+	<LastName>lekoadasd</LastName>
+	<Email>asd@abv.bg</Email>
+	<Nationality>Cigan</Nationality>
+	<Business_x0020_Phone_x0020_Number>09213123</Business_x0020_Phone_x0020_Number>
+	<LecturerAbbreviation>Mr.</LecturerAbbreviation>
+	<DateStarted>01-03-2005</DateStarted>
 </Lecturer>

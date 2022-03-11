@@ -24,8 +24,12 @@ namespace Assignment2.Entities
             //TODO: Validate Email using own regex
             string emailValidationRegexPattern = @"^[A-Za-z0-9+_.-]+@(.+)$";
             Regex regex = new(emailValidationRegexPattern);
-            //check if its a match
-            regex.IsMatch(email);
+            //check if it is NOT a match -> Invalid email exception
+            if (!regex.IsMatch(email))
+            {
+                
+
+            }
             this.email = email;
             this.nationality = nationality;
         }
