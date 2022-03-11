@@ -22,14 +22,14 @@ namespace Assignment2.Entities
             this.firstName = firstName;
             this.lastName = lastName;
             //TODO: Validate Email using own regex
-            string emailValidationRegexPattern = @"^[A-Za-z0-9+_.-]+@(.+)$";
-            Regex regex = new(emailValidationRegexPattern);
-            //check if it is NOT a match -> Invalid email exception
-            if (!regex.IsMatch(email))
-            {
-                
-
-            }
+            //string emailValidationRegexPattern = @"^[A-Za-z0-9+_.-]+@(.+)$";
+            //Regex regex = new(emailValidationRegexPattern);
+            ////check if it is NOT a match -> Invalid email exception
+            //if (!regex.IsMatch(email))
+            //{
+            //    
+            //
+            //}
             this.email = email;
             this.nationality = nationality;
         }
