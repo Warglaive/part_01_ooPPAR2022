@@ -4,10 +4,13 @@ namespace Assignment2.Entities
 {
     public class Student : User, IStudent
     {
-        private string studyProgram;
-        private string cohort;
-        private string studentClass;
+        private string? studyProgram;
+        private string? cohort;
+        private string? studentClass;
+        private Student()
+        {
 
+        }
         public Student(string firstName, string lastName, string email, string nationality, string studyProgram, string cohort, string studentClass)
             : base(firstName, lastName, email, nationality)
         {

@@ -7,18 +7,17 @@ namespace Assignment2.Entities
     {
         private const string dateTimeFormat = "dd-MM-yyyy";
 
-        private string phoneNumberWork;
+        private string? phoneNumberWork;
         //calculated value
-        private string lecturerAbbreviation;
-        private DateTime dateStarted;
+        private string? lecturerAbbreviation;
+        private DateTime? dateStarted;
 
 
 
-        //test ctor
-        /*public Lecturer(string firstName, string lastName, string email, string nationality)
-        : base(firstName, lastName, email, nationality)
-        { }*/
+        private Lecturer()
+        {
 
+        }
 
 
         public Lecturer(string firstName, string lastName, string email, string nationality, string phoneNumberWork, string dateStarted)

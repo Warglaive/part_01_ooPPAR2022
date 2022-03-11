@@ -1,6 +1,8 @@
 ﻿using Assignment2.Entities;
 using System;
 using System.Globalization;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Assignment2 // Note: actual namespace depends on the project name.
 {
@@ -40,6 +42,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void CreateUser()
         {
+
             //get all User types and make the user select which to create
             var userTypes = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)))
                 .ToList();
@@ -66,8 +69,13 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             var arr = consoleInputArguments.ToArray();
             var userInstance = Activator.CreateInstance(currentType, arr);
             //Save instance to XML
+            //XmlSerializer xmlSerializer = new(currentType);
 
+            XmlSerializer serializer = new XmlSerializer(userInstance.GetType());
 
+            TextWriter streamWriter = new StreamWriter(@"D:\part_01_oo-Warglaive\oo_part_2\Assignment2PPAR\Storage\Users.xml");
+            serializer.Serialize(streamWriter, userInstance);
+            streamWriter.Close();
         }
     }
 }

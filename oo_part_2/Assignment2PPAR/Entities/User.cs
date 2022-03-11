@@ -7,11 +7,15 @@ namespace Assignment2.Entities
         public const int initId = 0;
         private int id;
         //add fields according to properties
-        private string firstName;
-        private string lastName;
-        private string email;
-        private string nationality;
+        private string? firstName;
+        private string? lastName;
+        private string? email;
+        private string? nationality;
 
+        public User()
+        {
+
+        }
         public User(string firstName, string lastName, string email, string nationality)
         {
             this.firstName = firstName;
