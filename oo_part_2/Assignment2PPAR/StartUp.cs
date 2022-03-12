@@ -31,7 +31,6 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             command.PrintLineOnConsole("1. Create user");
             command.PrintLineOnConsole("2. Show overview users in database");
             command.PrintLineOnConsole("3. Show user details");
-            command.PrintLineOnConsole("3. Show user details");
             command.PrintLineOnConsole("4. Exit application");
 
             var input = Console.ReadLine();

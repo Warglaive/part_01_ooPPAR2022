@@ -2,16 +2,14 @@
 {
     public class Command
     {
-        //Description property
-        public string Description { get; set; }
+        private string Description { get; set; }
+
+        private Action<string> printMessageAction;
 
         public Command(string description)
         {
             this.Description = description;
-            Action<string> printMessageAction;
-
             printMessageAction = PrintLineOnConsole;
-
             printMessageAction(this.Description);
         }
 
