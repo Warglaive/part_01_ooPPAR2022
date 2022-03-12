@@ -9,16 +9,15 @@ namespace Assignment2.Factories
     {
         public void SaveObjectToXML(object? obj)
         {
-            string sAttr;
             // Read a particular key from the config file 
-            sAttr = ConfigurationManager.AppSettings.Get("xmlFileLoc");
-            Console.WriteLine("The value of xmlFileLoc: " + sAttr);
+            var fileDirectory = ConfigurationManager.AppSettings.Get("xmlFileLoc");
+            Console.WriteLine("The value of xmlFileLoc: " + fileDirectory);
 
 
 
 
-            XmlSerializer serializer = new XmlSerializer(obj.GetType());
-            TextWriter streamWriter = new StreamWriter(sAttr);
+            var serializer = new XmlSerializer(obj.GetType());
+            var streamWriter = new StreamWriter(fileDirectory);
             serializer.Serialize(streamWriter, obj);
             streamWriter.Close();
         }
