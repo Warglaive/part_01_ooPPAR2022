@@ -1,4 +1,6 @@
 ﻿using Assignment2.Entities;
+using Assignment2.Factories;
+using Assignment2.Interfaces;
 using System;
 using System.Globalization;
 using System.Xml;
@@ -74,10 +76,8 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //Save instance to XML
             //XmlSerializer xmlSerializer = new(currentType);
 
-            XmlSerializer serializer = new XmlSerializer(userInstance.GetType());
-            TextWriter streamWriter = new StreamWriter(@"D:\part_01_oo-Warglaive\oo_part_2\Assignment2PPAR\Storage\Users.xml");
-            serializer.Serialize(streamWriter, userInstance);
-            streamWriter.Close();
+            AbstractDBFactory factory = new XMLDBFactory();
+            factory.SaveObjectToXML(userInstance);
         }
     }
 }
