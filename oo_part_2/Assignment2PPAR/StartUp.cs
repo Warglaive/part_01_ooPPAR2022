@@ -25,7 +25,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void PrintFirstMenu()
         {
-            Command command = new Command("Please choose an option: ");
+            Command command = new("Please choose an option: ");
 
             //TODO: Print menu and start Create user
             command.PrintLineOnConsole("1. Create user");

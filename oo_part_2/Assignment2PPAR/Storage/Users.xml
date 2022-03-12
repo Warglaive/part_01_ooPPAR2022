@@ -7,4 +7,13 @@
 	<BusinessPhoneNumber>dsa</BusinessPhoneNumber>
 	<Abbreviation>Mr.</Abbreviation>
 	<StartDate>01-01-1991</StartDate>
-</Lecturer>
+</Lecturer><?xml version="1.0" encoding="utf-8"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<FirstName>Ivan</FirstName>
+	<LastName>Kirov</LastName>
+	<Email>adsa</Email>
+	<Nationality>sad</Nationality>
+	<StudyProgram>PROGRAM</StudyProgram>
+	<Cohort>91</Cohort>
+	<StudentClass>96</StudentClass>
+</Student>

@@ -11,13 +11,11 @@ namespace Assignment2.Factories
         {
             // Read a particular key from the config file 
             var fileDirectory = ConfigurationManager.AppSettings.Get("xmlFileLoc");
-            Console.WriteLine("The value of xmlFileLoc: " + fileDirectory);
-
-
-
+            Console.WriteLine("All users are saved in: " + fileDirectory);
 
             var serializer = new XmlSerializer(obj.GetType());
-            var streamWriter = new StreamWriter(fileDirectory);
+            var streamWriter = new StreamWriter(fileDirectory, true);
+            // serializer.
             serializer.Serialize(streamWriter, obj);
             streamWriter.Close();
         }
