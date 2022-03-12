@@ -1,4 +1,6 @@
 ﻿using Assignment2.Interfaces;
+using System.Configuration;
+using System.Collections.Specialized;
 using System.Xml.Serialization;
 
 namespace Assignment2.Factories
@@ -7,8 +9,16 @@ namespace Assignment2.Factories
     {
         public void SaveObjectToXML(object? obj)
         {
+            string sAttr;
+            // Read a particular key from the config file 
+            sAttr = ConfigurationManager.AppSettings.Get("xmlFileLoc");
+            Console.WriteLine("The value of xmlFileLoc: " + sAttr);
+
+
+
+
             XmlSerializer serializer = new XmlSerializer(obj.GetType());
-            TextWriter streamWriter = new StreamWriter(@"D:\part_01_oo-Warglaive\oo_part_2\Assignment2PPAR\Storage\Users.xml");
+            TextWriter streamWriter = new StreamWriter(sAttr);
             serializer.Serialize(streamWriter, obj);
             streamWriter.Close();
         }
