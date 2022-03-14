@@ -60,27 +60,26 @@ namespace Assignment2.Entities
                     Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(user)}");
                 }
             }
+            streamReader.Dispose();
             streamReader.Close();
         }
 
 
 
-        public User ShowUserDetailsById(int id)
+        public void ShowUserDetailsById(int id)
         {
-            /* //Get last stored user's id, if none -> return 0;
-             //use deserializer to make a class from XML
-             // Read a particular key from the config file 
-             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-             Console.WriteLine("Reading file: " + fileDirectory);
+            //Get last stored user's id, if none -> return 0;
+            //use deserializer to make a class from XML
+            // Read a particular key from the config file 
+            var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
+            Console.WriteLine("Reading file: " + fileDirectory);
 
-             var serializer = new XmlSerializer(typeof(User));
-             var streamReader = new StreamReader(fileDirectory, true);
-             var deserializedObject = serializer.Deserialize(streamReader);
-             streamReader.Close();
-             return 0;*/
-            return null;
+            var serializer = new XmlSerializer(typeof(User));
+            var streamReader = new StreamReader(fileDirectory, true);
+            List<User> deserializedObject = (List<User>)serializer.Deserialize(streamReader);
+            var user = deserializedObject.Where(x => x.Id.Equals(id)).First();
+
+            Console.WriteLine($"{user.FirstName} {user.LastName}");
         }
-
-
     }
 }

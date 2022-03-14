@@ -5,7 +5,7 @@ namespace Assignment2.Interfaces
     public interface IXmlDBManager
     {
         void SaveObjectToXML(List<User> Users);
-        User ShowUserDetailsById(int id);
+        void ShowUserDetailsById(int id);
         void ShowUsersOverview();
         void ExitApplication();
     }
