@@ -1,5 +1,8 @@
-﻿namespace Assignment2.Entities
+﻿using System.Xml.Serialization;
+
+namespace Assignment2.Entities
 {
+    [XmlType]
     public class TestUserType : User
     {
         public TestUserType(string firstName, string lastName, string email, string nationality)

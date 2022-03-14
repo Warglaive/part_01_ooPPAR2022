@@ -1,7 +1,9 @@
 ﻿using Assignment2.Interfaces;
+using System.Xml.Serialization;
 
 namespace Assignment2.Entities
 {
+    [XmlType]
     public class Student : User, IStudent
     {
         private string? studyProgram;

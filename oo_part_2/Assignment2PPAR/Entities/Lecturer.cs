@@ -3,9 +3,10 @@ using System.Xml.Serialization;
 
 namespace Assignment2.Entities
 {
+    [XmlType]
     public class Lecturer : User, ILecturer
     {
-        private const string dateTimeFormat = "dd-MM-yyyy";
+        private const string dateFormat = "dd-MM-yyyy";
 
         private string? phoneNumberWork;
         //calculated value

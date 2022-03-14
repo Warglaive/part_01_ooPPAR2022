@@ -10,6 +10,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 {
     public class StartUp
     {
+        static Command command;
         public static void Main()
         {
             //use reflection to get Entities data
@@ -25,7 +26,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void PrintFirstMenu()
         {
-            Command command = new("Please choose an option: ");
+            command = new("Please choose an option: ");
 
             //TODO: Print menu and start Create user
             command.PrintLineOnConsole("1. Create user");
@@ -46,11 +47,10 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void CreateUser()
         {
-
             //get all User types and make the user select which to create
             var userTypes = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)))
                 .ToList();
-            Console.WriteLine("Which type of User would you like to create? ");
+            command.PrintLineOnConsole("Which type of User would you like to create? ");
             for (int i = 0; i < userTypes.Count; i++)
             {
                 Console.WriteLine($"{userTypes[i].Name}");
@@ -76,7 +76,10 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //XmlSerializer xmlSerializer = new(currentType);
 
             AbstractDBFactory factory = new XMLDBFactory();
-            factory.SaveObjectToXML(userInstance);
+            var DbManager = factory.CreateXMLDbManager();
+            DbManager.SaveObjectToXML(userInstance);
+
+
         }
     }
 }

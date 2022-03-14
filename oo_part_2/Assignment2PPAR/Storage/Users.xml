@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Lecturer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<FirstName>Hah</FirstName>
-	<LastName>asd</LastName>
-	<Email>dsa</Email>
-	<Nationality>dsa</Nationality>
-	<BusinessPhoneNumber>dsa</BusinessPhoneNumber>
-	<Abbreviation>Mr.</Abbreviation>
-	<StartDate>01-01-1991</StartDate>
-</Lecturer><?xml version="1.0" encoding="utf-8"?>
 <Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<FirstName>Ivan</FirstName>
-	<LastName>Kirov</LastName>
-	<Email>adsa</Email>
+	<Id>0</Id>
+	<FirstName>asd</FirstName>
+	<LastName>asd</LastName>
+	<Email>asd</Email>
+	<Nationality>asd</Nationality>
+	<StudyProgram>sad</StudyProgram>
+	<Cohort>sad</Cohort>
+	<StudentClass>sad</StudentClass>
+</Student><?xml version="1.0" encoding="utf-8"?>
+<Lecturer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Id>0</Id>
+	<FirstName>asd</FirstName>
+	<LastName>asd</LastName>
+	<Email>asd</Email>
+	<Nationality>asd</Nationality>
+	<BusinessPhoneNumber>asd</BusinessPhoneNumber>
+	<Abbreviation>Mr.</Abbreviation>
+	<StartDate>asd</StartDate>
+</Lecturer><?xml version="1.0" encoding="utf-8"?>
+<Lecturer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Id>0</Id>
+	<FirstName>as</FirstName>
+	<LastName>dsad</LastName>
+	<Email>sad</Email>
 	<Nationality>sad</Nationality>
-	<StudyProgram>PROGRAM</StudyProgram>
-	<Cohort>91</Cohort>
-	<StudentClass>96</StudentClass>
-</Student>
+	<BusinessPhoneNumber>sda</BusinessPhoneNumber>
+	<Abbreviation>Mr.</Abbreviation>
+	<StartDate>s</StartDate>
+</Lecturer>

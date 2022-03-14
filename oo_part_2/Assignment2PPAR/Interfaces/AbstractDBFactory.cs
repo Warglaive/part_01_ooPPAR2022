@@ -1,7 +1,10 @@
-﻿namespace Assignment2.Interfaces
+﻿using Assignment2.Entities;
+
+namespace Assignment2.Interfaces
 {
     interface AbstractDBFactory
     {
-        void SaveObjectToXML(object? obj);
+        XmlDBManager CreateXMLDbManager();
+       
     }
 }

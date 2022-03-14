@@ -2,7 +2,6 @@
 {
     public interface ICommand
     {
-
-      
+        string Description { get; set; }
     }
 }
