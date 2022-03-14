@@ -70,18 +70,24 @@ namespace Assignment2.Entities
 
         public void ShowUserDetailsById(int id)
         {
-            //Get last stored user's id, if none -> return 0;
-            //use deserializer to make a class from XML
-            // Read a particular key from the config file 
             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-            Console.WriteLine("Reading file: " + fileDirectory);
+            Console.WriteLine("Reading file... : " + fileDirectory);
 
-            var serializer = new XmlSerializer(typeof(User));
+            var serializer = new XmlSerializer(typeof(List<User>));
             var streamReader = new StreamReader(fileDirectory, true);
             List<User> deserializedObject = (List<User>)serializer.Deserialize(streamReader);
-            var user = deserializedObject.Where(x => x.Id.Equals(id)).First();
-
-            Console.WriteLine($"{user.FirstName} {user.LastName}");
+            foreach (var user in deserializedObject.Where(x => x.Id.Equals(id)))
+            {
+                Console.WriteLine($"Printing properties for user of type: {user.GetType().Name}");
+                //PRINT Each object's property
+                var properties = user.GetType().GetProperties().ToList();
+                foreach (var property in properties)
+                {
+                    Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(user)}");
+                }
+            }
+            streamReader.Dispose();
+            streamReader.Close();
         }
     }
 }

@@ -40,9 +40,26 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                     SaveCreatedUsers();
                     DisplayUsersFromXML();
                     break;
+                case "3":
+                    SaveCreatedUsers();
+                    Console.WriteLine("Please enter user id: ");
+                    int id = int.Parse(Console.ReadLine());
+                    ShowUserById(id);
+                    break;
+                case "4":
+                    ExitApplication();
+                    break;
                 default:
                     break;
             }
+        }
+        private static void ExitApplication()
+        {
+            DbManager.ExitApplication();
+        }
+        private static void ShowUserById(int id)
+        {
+            DbManager.ShowUserDetailsById(id);
         }
 
         private static void DisplayUsersFromXML()
@@ -74,7 +91,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
             // var typeProperties = currentType.GetProperties();
             var consoleInputArguments = new List<object>();
-            var constructrs = currentType.GetConstructors().Where(x=>x.GetParameters().Length>0).First();
+            var constructrs = currentType.GetConstructors().Where(x => x.GetParameters().Length > 0).First();
             var firstCtor = constructrs;
             foreach (var parameter in firstCtor.GetParameters())
             {
