@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 
 namespace Assignment2.Entities
 {
+    [XmlRoot]
     public abstract class User : IUser
     {
         AbstractDBFactory factory;

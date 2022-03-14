@@ -6,23 +6,31 @@ namespace Assignment2.Entities
 {
     public class XmlDBManager : IXmlDBManager
     {
-        public void SaveObjectToXML(object? obj)
+        public void SaveObjectToXML(List<object> Users)
         {
             // Read a particular key from the config file 
             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
             Console.WriteLine("All users are saved in: " + fileDirectory);
 
-            /* XmlRootAttribute root = new XmlRootAttribute();
-             root.ElementName = "AllUsers";
-             root.
-             root.IsNullable = true;*/
-            //new XmlRootAttribute("dataNew")
-            var serializer = new XmlSerializer(obj.GetType()/*, root*/);
+            //root
+            XmlRootAttribute root = new XmlRootAttribute();
+            root.ElementName = "Users";
+            root.IsNullable = true;
+            //namespace
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "");
+            //
             var streamWriter = new StreamWriter(fileDirectory, true);
 
-            serializer.Serialize(streamWriter, obj);
+            foreach (var user in Users)
+            {
+                var serializer = new XmlSerializer(user.GetType());
+                serializer.Serialize(streamWriter, user, ns);
+                          }
             streamWriter.Dispose();
             streamWriter.Close();
+
+
         }
         public int ReadLastIdFromXML()
         {

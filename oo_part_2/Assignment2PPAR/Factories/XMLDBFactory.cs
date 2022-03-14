@@ -6,10 +6,6 @@ namespace Assignment2.Factories
 {
     public class XMLDBFactory : AbstractDBFactory
     {
-        public XMLDBFactory()
-        {
-        }
-
         public XmlDBManager CreateXMLDbManager()
         {
             return new XmlDBManager();

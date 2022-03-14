@@ -10,7 +10,8 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 {
     public class StartUp
     {
-        static Command command;
+        static Command Command;
+        static List<object> Users;
         public static void Main()
         {
             //use reflection to get Entities data
@@ -21,28 +22,40 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                  var properties = type.GetProperties();
              }*/
             //print first menu
+            Users = new List<object>();
             PrintFirstMenu();
         }
 
         private static void PrintFirstMenu()
         {
-            command = new("Please choose an option: ");
+            Command = new("Please choose an option: ");
 
             //TODO: Print menu and start Create user
-            command.PrintLineOnConsole("1. Create user");
-            command.PrintLineOnConsole("2. Show overview users in database");
-            command.PrintLineOnConsole("3. Show user details");
-            command.PrintLineOnConsole("4. Exit application");
+            Command.PrintLineOnConsole("1. Create user");
+            Command.PrintLineOnConsole("2. Show overview users in database");
+            Command.PrintLineOnConsole("3. Show user details");
+            Command.PrintLineOnConsole("4. Exit application");
 
             var input = Console.ReadLine();
             switch (input)
             {
                 case "1":
                     CreateUser();
+                    SaveCreatedUsers();
                     break;
                 default:
                     break;
             }
+        }
+
+        private static void SaveCreatedUsers()
+        {
+            AbstractDBFactory factory = new XMLDBFactory();
+            var DbManager = factory.CreateXMLDbManager();
+            //add to array and save users as array in XML file
+
+            DbManager.SaveObjectToXML(Users);
+            PrintFirstMenu();
         }
 
         private static void CreateUser()
@@ -50,7 +63,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //get all User types and make the user select which to create
             var userTypes = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)))
                 .ToList();
-            command.PrintLineOnConsole("Which type of User would you like to create? ");
+            Command.PrintLineOnConsole("Which type of User would you like to create? ");
             for (int i = 0; i < userTypes.Count; i++)
             {
                 Console.WriteLine($"{userTypes[i].Name}");
@@ -74,12 +87,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             var userInstance = Activator.CreateInstance(currentType, arr);
             //Save instance to XML
             //XmlSerializer xmlSerializer = new(currentType);
-
-            AbstractDBFactory factory = new XMLDBFactory();
-            var DbManager = factory.CreateXMLDbManager();
-            DbManager.SaveObjectToXML(userInstance);
-
-
+            Users.Add(userInstance);
         }
     }
 }

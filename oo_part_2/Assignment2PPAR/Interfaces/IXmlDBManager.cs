@@ -8,7 +8,7 @@ namespace Assignment2.Interfaces
 {
     public interface IXmlDBManager
     {
-        void SaveObjectToXML(object? obj);
+        void SaveObjectToXML(List<object> Users);
         int ReadLastIdFromXML();
     }
 }
