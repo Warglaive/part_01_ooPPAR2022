@@ -26,7 +26,7 @@ namespace Assignment2.Entities
             {
                 var serializer = new XmlSerializer(user.GetType());
                 serializer.Serialize(streamWriter, user, ns);
-                          }
+            }
             streamWriter.Dispose();
             streamWriter.Close();
 
