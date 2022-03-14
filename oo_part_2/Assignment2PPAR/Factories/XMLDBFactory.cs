@@ -1,5 +1,6 @@
 ﻿using Assignment2.Entities;
 using Assignment2.Interfaces;
+using System.Configuration;
 
 namespace Assignment2.Factories
 {
@@ -7,7 +8,9 @@ namespace Assignment2.Factories
     {
         public XmlDBManager CreateXMLDbManager()
         {
-            return new XmlDBManager();
+            //use AppConfig 
+            var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
+            return new XmlDBManager(fileDirectory);
         }
     }
 }

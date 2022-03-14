@@ -9,6 +9,13 @@ namespace Assignment2.Entities
 {
     public class XmlDBManager : IXmlDBManager
     {
+        private string? fileDirectory;
+
+        public XmlDBManager(string? fileDirectory)
+        {
+            this.fileDirectory = fileDirectory;
+        }
+
         public void ExitApplication()
         {
             Console.WriteLine("See ya!");
@@ -18,7 +25,7 @@ namespace Assignment2.Entities
         public void SaveObjectToXML(List<User> Users)
         {
             // Read a particular key from the config file 
-            var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
+            //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("All users are saved in: " + fileDirectory);
 
@@ -42,7 +49,7 @@ namespace Assignment2.Entities
             //Get last stored user's id, if none -> return 0;
             //use deserializer to make a class from XML
             // Read a particular key from the config file 
-            var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
+            //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
             Console.WriteLine("Reading file... : " + fileDirectory);
 
             var serializer = new XmlSerializer(typeof(List<User>));
@@ -68,7 +75,7 @@ namespace Assignment2.Entities
 
         public void ShowUserDetailsById(int id)
         {
-            var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
+            //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
             Console.WriteLine("Reading file... : " + fileDirectory);
 
             var serializer = new XmlSerializer(typeof(List<User>));
