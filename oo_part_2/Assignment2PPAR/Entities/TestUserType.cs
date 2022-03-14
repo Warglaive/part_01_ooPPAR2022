@@ -2,7 +2,6 @@
 
 namespace Assignment2.Entities
 {
-    [XmlType]
     public class TestUserType : User
     {
         public TestUserType() { }

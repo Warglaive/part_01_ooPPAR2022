@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<User xsi:type="Lecturer">
+		<Id>0</Id>
+		<FirstName>asd</FirstName>
+		<LastName>asd</LastName>
+		<Email>asd</Email>
+		<Nationality>asd</Nationality>
+		<BusinessPhoneNumber>asd</BusinessPhoneNumber>
+		<Abbreviation>Mr.</Abbreviation>
+		<StartDate>asd</StartDate>
+	</User>
+	<User xsi:type="Student">
+		<Id>0</Id>
+		<FirstName>asd</FirstName>
+		<LastName>asd</LastName>
+		<Email>asd</Email>
+		<Nationality>asd</Nationality>
+		<StudyProgram>asd</StudyProgram>
+		<Cohort>asd</Cohort>
+		<StudentClass>asd</StudentClass>
+	</User>
+</ArrayOfUser>

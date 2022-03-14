@@ -1,11 +1,11 @@
-﻿using Assignment2.Factories;
-using Assignment2.Interfaces;
-using System.Text.RegularExpressions;
+﻿using Assignment2.Interfaces;
 using System.Xml.Serialization;
 
 namespace Assignment2.Entities
 {
-    [XmlRoot]
+    [XmlInclude(typeof(Student))]
+    [XmlInclude(typeof(Lecturer))]
+    [XmlInclude(typeof(TestUserType))]
     public abstract class User : IUser
     {
         AbstractDBFactory factory;
@@ -25,17 +25,17 @@ namespace Assignment2.Entities
         public User(string firstName, string lastName, string email, string nationality)
         {
             this.id = 0;
-/*
-            factory = new XMLDBFactory();
-            try
-            {
-               // this.id = factory.ReadLastIdFromXML();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
-                this.id = 0;
-            }*/
+            /*
+                        factory = new XMLDBFactory();
+                        try
+                        {
+                           // this.id = factory.ReadLastIdFromXML();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.StackTrace);
+                            this.id = 0;
+                        }*/
             this.firstName = firstName;
             this.lastName = lastName;
             //TODO: Validate Email using own regex

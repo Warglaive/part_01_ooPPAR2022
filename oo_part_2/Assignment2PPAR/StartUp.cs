@@ -11,18 +11,10 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
     public class StartUp
     {
         static Command Command;
-        static List<object> Users;
+        static List<User> Users;
         public static void Main()
         {
-            //use reflection to get Entities data
-            /* User Lecturer = new Lecturer("asd", "asd", "email", "xasd", "213231", DateTime.Now);
-             var types = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)));
-             foreach (var type in types)
-             {
-                 var properties = type.GetProperties();
-             }*/
-            //print first menu
-            Users = new List<object>();
+            Users = new List<User>();
             PrintFirstMenu();
         }
 
@@ -41,6 +33,8 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             {
                 case "1":
                     CreateUser();
+                    break;
+                case "2":
                     SaveCreatedUsers();
                     break;
                 default:
@@ -84,10 +78,11 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             }
             //pass list to type's constructor
             var arr = consoleInputArguments.ToArray();
-            var userInstance = Activator.CreateInstance(currentType, arr);
+            var userInstance = (User)Activator.CreateInstance(currentType, arr);
             //Save instance to XML
             //XmlSerializer xmlSerializer = new(currentType);
             Users.Add(userInstance);
+            PrintFirstMenu();
         }
     }
 }

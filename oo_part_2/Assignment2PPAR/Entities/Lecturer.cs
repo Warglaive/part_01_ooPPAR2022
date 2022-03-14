@@ -1,9 +1,9 @@
 ﻿using Assignment2.Interfaces;
+using Microsoft.VisualBasic;
 using System.Xml.Serialization;
 
 namespace Assignment2.Entities
 {
-    [XmlType]
     public class Lecturer : User, ILecturer
     {
         private const string dateFormat = "dd-MM-yyyy";

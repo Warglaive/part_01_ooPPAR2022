@@ -1,12 +1,15 @@
 ﻿using Assignment2.Interfaces;
 using System.Configuration;
+using System.Text;
+using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Assignment2.Entities
 {
     public class XmlDBManager : IXmlDBManager
     {
-        public void SaveObjectToXML(List<object> Users)
+        public void SaveObjectToXML(List<User> Users)
         {
             // Read a particular key from the config file 
             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
@@ -17,21 +20,30 @@ namespace Assignment2.Entities
             root.ElementName = "Users";
             root.IsNullable = true;
             //namespace
-            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("", "");
+            var emptyNamepsaces = new XmlSerializerNamespaces(new[] {
+              XmlQualifiedName.Empty});
             //
-            var streamWriter = new StreamWriter(fileDirectory, true);
+            //var streamWriter = new StreamWriter(fileDirectory, true);
 
-            foreach (var user in Users)
+            //
+
+            var serializer = new XmlSerializer(typeof(List<User>));
+            using (TextWriter writer = new StreamWriter(fileDirectory))
+            {
+                serializer.Serialize(writer, Users);
+            }
+            //
+
+            /*foreach (var user in Users)
             {
                 var serializer = new XmlSerializer(user.GetType());
-                serializer.Serialize(streamWriter, user, ns);
-            }
-            streamWriter.Dispose();
-            streamWriter.Close();
+                serializer.Serialize(streamWriter, user, emptyNamepsaces);
+            }*/
+
 
 
         }
+
         public int ReadLastIdFromXML()
         {
             //Get last stored user's id, if none -> return 0;
