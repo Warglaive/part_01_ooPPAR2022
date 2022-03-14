@@ -66,8 +66,6 @@ namespace Assignment2.Entities
             streamReader.Close();
         }
 
-
-
         public void ShowUserDetailsById(int id)
         {
             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
