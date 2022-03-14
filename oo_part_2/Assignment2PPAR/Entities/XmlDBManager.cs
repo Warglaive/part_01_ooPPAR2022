@@ -48,15 +48,16 @@ namespace Assignment2.Entities
             var serializer = new XmlSerializer(typeof(List<User>));
             var streamReader = new StreamReader(fileDirectory, true);
             List<User> deserializedObject = (List<User>)serializer.Deserialize(streamReader);
-            foreach (var item in deserializedObject)
+            foreach (var user in deserializedObject)
             {
+                Console.WriteLine($"Printing properties for user of type: {user.GetType().Name}");
                 //PRINT Each object's property
-                var properties = item.GetType().GetProperties().ToList();
+                var properties = user.GetType().GetProperties().ToList();
                 foreach (var property in properties)
                 {
                     //object obj = property.GetValue(item, null);
 
-                    Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(item)}");
+                    Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(user)}");
                 }
             }
             streamReader.Close();
