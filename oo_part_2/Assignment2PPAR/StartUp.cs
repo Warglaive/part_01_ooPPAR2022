@@ -1,10 +1,6 @@
 ﻿using Assignment2.Entities;
 using Assignment2.Factories;
 using Assignment2.Interfaces;
-using System;
-using System.Globalization;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace Assignment2 // Note: actual namespace depends on the project name.
 {
@@ -12,8 +8,12 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
     {
         static Command Command;
         static List<User> Users;
+        static XmlDBManager DbManager;
         public static void Main()
         {
+            AbstractDBFactory factory = new XMLDBFactory();
+            DbManager = factory.CreateXMLDbManager();
+
             Users = new List<User>();
             PrintFirstMenu();
         }
@@ -25,7 +25,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //TODO: Print menu and start Create user
             Command.PrintLineOnConsole("1. Create user");
             Command.PrintLineOnConsole("2. Show overview users in database");
-            Command.PrintLineOnConsole("3. Show user details");
+            Command.PrintLineOnConsole("3. Show user details by Id");
             Command.PrintLineOnConsole("4. Exit application");
 
             var input = Console.ReadLine();
@@ -44,8 +44,6 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void SaveCreatedUsers()
         {
-            AbstractDBFactory factory = new XMLDBFactory();
-            var DbManager = factory.CreateXMLDbManager();
             //add to array and save users as array in XML file
 
             DbManager.SaveObjectToXML(Users);

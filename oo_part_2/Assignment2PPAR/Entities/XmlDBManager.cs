@@ -9,10 +9,17 @@ namespace Assignment2.Entities
 {
     public class XmlDBManager : IXmlDBManager
     {
+        public void ExitApplication()
+        {
+            Console.WriteLine("See ya!");
+            Environment.Exit(0);
+        }
+
         public void SaveObjectToXML(List<User> Users)
         {
             // Read a particular key from the config file 
             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("All users are saved in: " + fileDirectory);
 
             //root
@@ -31,7 +38,7 @@ namespace Assignment2.Entities
             }
         }
 
-        public User GetUserById(int id)
+        public User ShowUserDetailsById(int id)
         {
             //Get last stored user's id, if none -> return 0;
             //use deserializer to make a class from XML
@@ -44,6 +51,11 @@ namespace Assignment2.Entities
             var deserializedObject = serializer.Deserialize(streamReader);
             streamReader.Close();
             return 0;
+        }
+
+        public void ShowUsersOverview()
+        {
+            throw new NotImplementedException();
         }
     }
 }
