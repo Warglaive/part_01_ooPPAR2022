@@ -22,29 +22,16 @@ namespace Assignment2.Entities
             //namespace
             var emptyNamepsaces = new XmlSerializerNamespaces(new[] {
               XmlQualifiedName.Empty});
-            //
-            //var streamWriter = new StreamWriter(fileDirectory, true);
 
-            //
 
             var serializer = new XmlSerializer(typeof(List<User>));
             using (TextWriter writer = new StreamWriter(fileDirectory))
             {
                 serializer.Serialize(writer, Users);
             }
-            //
-
-            /*foreach (var user in Users)
-            {
-                var serializer = new XmlSerializer(user.GetType());
-                serializer.Serialize(streamWriter, user, emptyNamepsaces);
-            }*/
-
-
-
         }
 
-        public int ReadLastIdFromXML()
+        public User GetUserById(int id)
         {
             //Get last stored user's id, if none -> return 0;
             //use deserializer to make a class from XML
