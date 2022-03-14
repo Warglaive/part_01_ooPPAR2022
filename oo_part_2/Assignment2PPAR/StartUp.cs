@@ -29,6 +29,8 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             Command.PrintLineOnConsole("4. Exit application");
 
             var input = Console.ReadLine();
+
+
             switch (input)
             {
                 case "1":
@@ -36,10 +38,17 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                     break;
                 case "2":
                     SaveCreatedUsers();
+                    DisplayUsersFromXML();
                     break;
                 default:
                     break;
             }
+        }
+
+        private static void DisplayUsersFromXML()
+        {
+            DbManager.ShowUsersOverview();
+            PrintFirstMenu();
         }
 
         private static void SaveCreatedUsers()
@@ -47,7 +56,6 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //add to array and save users as array in XML file
 
             DbManager.SaveObjectToXML(Users);
-            PrintFirstMenu();
         }
 
         private static void CreateUser()
@@ -66,8 +74,8 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
             // var typeProperties = currentType.GetProperties();
             var consoleInputArguments = new List<object>();
-            var constructrs = currentType.GetConstructors();
-            var firstCtor = constructrs[0];
+            var constructrs = currentType.GetConstructors().Where(x=>x.GetParameters().Length>0).First();
+            var firstCtor = constructrs;
             foreach (var parameter in firstCtor.GetParameters())
             {
                 Console.WriteLine($"Add {parameter.Name}: ");

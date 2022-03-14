@@ -37,25 +37,49 @@ namespace Assignment2.Entities
                 serializer.Serialize(writer, Users);
             }
         }
-
-        public User ShowUserDetailsById(int id)
+        public void ShowUsersOverview()
         {
             //Get last stored user's id, if none -> return 0;
             //use deserializer to make a class from XML
             // Read a particular key from the config file 
             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-            Console.WriteLine("Reading file: " + fileDirectory);
+            Console.WriteLine("Reading file... : " + fileDirectory);
 
-            var serializer = new XmlSerializer(typeof(User));
+            var serializer = new XmlSerializer(typeof(List<User>));
             var streamReader = new StreamReader(fileDirectory, true);
-            var deserializedObject = serializer.Deserialize(streamReader);
+            List<User> deserializedObject = (List<User>)serializer.Deserialize(streamReader);
+            foreach (var item in deserializedObject)
+            {
+                //PRINT Each object's property
+                var properties = item.GetType().GetProperties().ToList();
+                foreach (var property in properties)
+                {
+                    //object obj = property.GetValue(item, null);
+
+                    Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(item)}");
+                }
+            }
             streamReader.Close();
-            return 0;
         }
 
-        public void ShowUsersOverview()
+
+
+        public User ShowUserDetailsById(int id)
         {
-            throw new NotImplementedException();
+            /* //Get last stored user's id, if none -> return 0;
+             //use deserializer to make a class from XML
+             // Read a particular key from the config file 
+             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
+             Console.WriteLine("Reading file: " + fileDirectory);
+
+             var serializer = new XmlSerializer(typeof(User));
+             var streamReader = new StreamReader(fileDirectory, true);
+             var deserializedObject = serializer.Deserialize(streamReader);
+             streamReader.Close();
+             return 0;*/
+            return null;
         }
+
+
     }
 }
