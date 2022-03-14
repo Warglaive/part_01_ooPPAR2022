@@ -55,9 +55,11 @@ namespace Assignment2.Entities
                 var properties = user.GetType().GetProperties().ToList();
                 foreach (var property in properties)
                 {
-                    //object obj = property.GetValue(item, null);
+                    if (property.Name == "Id" || property.Name == "FirstName" || property.Name == "LastName")
+                    {
+                        Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(user)}");
 
-                    Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(user)}");
+                    }
                 }
             }
             streamReader.Dispose();
