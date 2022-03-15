@@ -25,15 +25,15 @@ namespace Assignment2.Entities
             : base(firstName, lastName, email, nationality)
         {
             this.phoneNumberWork = phoneNumberWork;
-            this.lecturerAbbreviation = "Mr.";/*AssignLecturerAbbreviation(firstName, lastName);*/
+            this.lecturerAbbreviation = AssignLecturerAbbreviation(firstName, lastName);
             this.dateStarted = dateStarted;
         }
 
 
         private string? AssignLecturerAbbreviation(string firstName, string lastName)
         {
-            //TODO
-            throw new NotImplementedException();
+            var result = "Mr. " + firstName[0] + " " + lastName[0];
+            return result;
         }
         [XmlElement(ElementName = "BusinessPhoneNumber")]
         public string PhoneNumberWork
