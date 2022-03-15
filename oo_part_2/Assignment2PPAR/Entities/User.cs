@@ -1,5 +1,7 @@
 ﻿using Assignment2.Interfaces;
 using System.Xml.Serialization;
+using System.Text.RegularExpressions;
+using Assignment2.Exceptions;
 
 namespace Assignment2.Entities
 {
@@ -10,7 +12,7 @@ namespace Assignment2.Entities
     {
         AbstractDBFactory factory;
         //Read last id from XML
-
+        private static int initialId = 0;
         private int id;
         //add fields according to properties
         private string? firstName;
@@ -24,29 +26,19 @@ namespace Assignment2.Entities
         }
         public User(string firstName, string lastName, string email, string nationality)
         {
-            this.id = 0;
-            /*
-                        factory = new XMLDBFactory();
-                        try
-                        {
-                           // this.id = factory.ReadLastIdFromXML();
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e.StackTrace);
-                            this.id = 0;
-                        }*/
+            this.id = initialId++;
+
             this.firstName = firstName;
             this.lastName = lastName;
-            //TODO: Validate Email using own regex
-            //string emailValidationRegexPattern = @"^[A-Za-z0-9+_.-]+@(.+)$";
-            //Regex regex = new(emailValidationRegexPattern);
-            ////check if it is NOT a match -> Invalid email exception
-            //if (!regex.IsMatch(email))
-            //{
-            //    
-            //
-            //}
+            //  TODO: Validate Email using own regex
+            string emailValidationRegexPattern = @"^[A-Za-z0-9+_.-]+@(.+)$";
+            Regex regex = new(emailValidationRegexPattern);
+            //check if it is NOT a match -> Invalid email exception
+            if (!regex.IsMatch(email))
+            {
+                throw new InvalidEmailException("Invalid Email format");
+
+            }
             this.email = email;
             this.nationality = nationality;
         }
