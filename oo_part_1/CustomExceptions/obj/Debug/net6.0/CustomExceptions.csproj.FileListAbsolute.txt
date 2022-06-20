@@ -1,0 +1,15 @@
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\bin\Debug\net6.0\CustomExceptions.exe
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\bin\Debug\net6.0\CustomExceptions.deps.json
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\bin\Debug\net6.0\CustomExceptions.runtimeconfig.json
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\bin\Debug\net6.0\CustomExceptions.dll
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\bin\Debug\net6.0\CustomExceptions.pdb
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\CustomExceptions.csproj.AssemblyReference.cache
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\CustomExceptions.GeneratedMSBuildEditorConfig.editorconfig
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\CustomExceptions.AssemblyInfoInputs.cache
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\CustomExceptions.AssemblyInfo.cs
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\CustomExceptions.csproj.CoreCompileInputs.cache
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\CustomExceptions.dll
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\refint\CustomExceptions.dll
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\CustomExceptions.pdb
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\CustomExceptions.genruntimeconfig.cache
+D:\part_01_oo-Warglaive\oo_part_1\CustomExceptions\obj\Debug\net6.0\ref\CustomExceptions.dll
