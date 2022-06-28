@@ -7,11 +7,11 @@ using System.Xml.Serialization;
 
 namespace Assignment2.Entities
 {
-    public class XmlDBManager : IXmlDBManager
+    public class DBManager : IDBManager
     {
         private string? fileDirectory;
 
-        public XmlDBManager(string? fileDirectory)
+        public DBManager(string? fileDirectory)
         {
             this.fileDirectory = fileDirectory;
         }
@@ -22,7 +22,7 @@ namespace Assignment2.Entities
             Environment.Exit(0);
         }
 
-        public void SaveObjectToXML(List<User> Users)
+        public void SaveUsers(List<User> Users)
         {
             // Read a particular key from the config file 
             //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");

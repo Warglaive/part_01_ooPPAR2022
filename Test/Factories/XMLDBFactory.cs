@@ -6,11 +6,12 @@ namespace Assignment2.Factories
 {
     public class XMLDBFactory : AbstractDBFactory
     {
-        public XmlDBManager CreateXMLDbManager()
+        public DBManager CreateXMLDbManager()
         {
             //use AppConfig 
             var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-            return new XmlDBManager(fileDirectory);
+            return new DBManager(fileDirectory);
+            //get users.xml loc
         }
     }
 }

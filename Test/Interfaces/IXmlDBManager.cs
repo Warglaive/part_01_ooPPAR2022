@@ -2,9 +2,9 @@
 
 namespace Assignment2.Interfaces
 {
-    public interface IXmlDBManager
+    public interface IDBManager
     {
-        void SaveObjectToXML(List<User> Users);
+        void SaveUsers(List<User> Users);
         void ShowUserDetailsById(int id);
         void ShowUsersOverview();
         void ExitApplication();

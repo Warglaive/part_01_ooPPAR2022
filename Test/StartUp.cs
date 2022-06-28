@@ -8,7 +8,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
     {
         static Command Command;
         static List<User> Users;
-        static XmlDBManager DbManager;
+        static DBManager DbManager;
         public static void Main()
         {
             AbstractDBFactory factory = new XMLDBFactory();
@@ -29,8 +29,6 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             Command.PrintLineOnConsole("4. Exit application");
 
             var input = Console.ReadLine();
-
-
             switch (input)
             {
                 case "1":
@@ -72,7 +70,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
         {
             //add to array and save users as array in XML file
 
-            DbManager.SaveObjectToXML(Users);
+            DbManager.SaveUsers(Users);
         }
 
         private static void CreateUser()
