@@ -20,7 +20,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             Users = new List<User>();
             PrintFirstMenu();
             //TEST PURPOSES
-            Console.WriteLine("Waiting...");
+            Console.WriteLine("Press any button to exit console...");
             Console.ReadLine();
 
         }
