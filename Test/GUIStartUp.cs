@@ -3,6 +3,10 @@ using Assignment2.Factories;
 
 namespace Assignment2 // Note: actual namespace depends on the project name.
 {
+    /// <summary>
+    /// I do not see a reason to create new GUI class and to transfer all of the current methods there.
+    /// Since the app is just GUI/BackEnd/Persistance
+    /// </summary>
     public class GUIStartUp
     {
         static Command Command;
@@ -26,8 +30,8 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             var functions = new List<Action>();
 
             Action action;
-           
-            
+
+
             //TODO: Print menu and start Create user
             Command.printMessageAction("Please choose an option: ");
             Command.printMessageAction("1. Create user");
