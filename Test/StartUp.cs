@@ -38,7 +38,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                     break;
                 case "2":
                     SaveCreatedUsers();
-                    DisplayUsersFromXML();
+                    DisplayUsers();
                     break;
                 case "3":
                     SaveCreatedUsers();
@@ -62,7 +62,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             DbManager.ShowUserDetailsById(id);
         }
 
-        private static void DisplayUsersFromXML()
+        private static void DisplayUsers()
         {
             DbManager.ShowUsersOverview();
             PrintFirstMenu();
