@@ -2,7 +2,7 @@
 
 namespace Test.Entities
 {
-    public class HelloNewUSer : User
+    public class NewUser3Test : User
     {
     }
 }
