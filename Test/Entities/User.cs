@@ -10,7 +10,6 @@ namespace Assignment2.Entities
     [XmlInclude(typeof(TestUserType))]
     public abstract class User : IUser
     {
-        AbstractDBFactory factory;
         //Read last id from XML
         private static int initialId = 0;
         private int id;

@@ -4,14 +4,20 @@ using System.Configuration;
 
 namespace Assignment2.Factories
 {
-    public class XMLDBFactory : AbstractDBFactory
+    public abstract class AbstractDBFactory
     {
-        public DBManager CreateXMLDbManager()
+        public static DBManager CreateDbManager()
         {
-            //use AppConfig 
-            var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-            return new DBManager(fileDirectory);
-            //get users.xml loc
+            var DBType = ConfigurationManager.AppSettings.Get("DBType");
+            if (DBType.Equals("XML"))
+            {
+                var fileDirectory = ConfigurationManager.AppSettings.Get("XML");
+                return new DBManager(fileDirectory);
+            }
+            else if (true)
+            {
+                throw new NotSupportedException();
+            }
         }
     }
 }

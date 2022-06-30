@@ -11,8 +11,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
         static DBManager DbManager;
         public static void Main()
         {
-            AbstractDBFactory factory = new XMLDBFactory();
-            DbManager = factory.CreateXMLDbManager();
+            DbManager = AbstractDBFactory.CreateDbManager();
 
             Users = new List<User>();
             PrintFirstMenu();
