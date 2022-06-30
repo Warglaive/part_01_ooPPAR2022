@@ -20,7 +20,7 @@ namespace Assignment2.Factories
             {
                 //return XML factory
                 var xmlDBFactory = new XMLDBFactory();
-                return xmlDBFactory.GetXMLDBManager();
+                return (DBManager)xmlDBFactory.GetDBManager();
             }
 
             //Another DB Type
