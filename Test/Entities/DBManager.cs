@@ -1,8 +1,5 @@
 ﻿using Assignment2.Interfaces;
-using System.Configuration;
-using System.Text;
 using System.Xml;
-using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Assignment2.Entities
@@ -10,15 +7,16 @@ namespace Assignment2.Entities
     public class DBManager : IDBManager
     {
         private string? fileDirectory;
-
+        private Command command;
         public DBManager(string? fileDirectory)
         {
             this.fileDirectory = fileDirectory;
+            this.command = new Command();
         }
 
         public void ExitApplication()
         {
-            Console.WriteLine("See ya!");
+            this.command.PrintLineOnConsole("See ya!");
             Environment.Exit(0);
         }
 
@@ -27,7 +25,7 @@ namespace Assignment2.Entities
             // Read a particular key from the config file 
             //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("All users are saved in: " + fileDirectory);
+            this.command.PrintLineOnConsole("All users are saved in: " + fileDirectory);
 
             //root
             XmlRootAttribute root = new XmlRootAttribute();
@@ -50,21 +48,21 @@ namespace Assignment2.Entities
             //use deserializer to make a class from XML
             // Read a particular key from the config file 
             //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-            Console.WriteLine("Reading file... : " + fileDirectory);
+            this.command.PrintLineOnConsole("Reading file... : " + fileDirectory);
 
             var serializer = new XmlSerializer(typeof(List<User>));
             var streamReader = new StreamReader(fileDirectory, true);
             List<User> deserializedObject = (List<User>)serializer.Deserialize(streamReader);
             foreach (var user in deserializedObject)
             {
-                Console.WriteLine($"Printing properties for user of type: {user.GetType().Name}");
+                this.command.PrintLineOnConsole($"Printing properties for user of type: {user.GetType().Name}");
                 //PRINT Each object's property
                 var properties = user.GetType().GetProperties().ToList();
                 foreach (var property in properties)
                 {
                     if (property.Name == "Id" || property.Name == "FirstName" || property.Name == "LastName")
                     {
-                        Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(user)}");
+                        this.command.PrintLineOnConsole($"Property: {property.Name} Value: {property.GetValue(user)}");
 
                     }
                 }
@@ -76,19 +74,19 @@ namespace Assignment2.Entities
         public void ShowUserDetailsById(int id)
         {
             //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-            Console.WriteLine("Reading file... : " + fileDirectory);
+            this.command.PrintLineOnConsole("Reading file... : " + fileDirectory);
 
             var serializer = new XmlSerializer(typeof(List<User>));
             var streamReader = new StreamReader(fileDirectory, true);
             List<User> deserializedObject = (List<User>)serializer.Deserialize(streamReader);
             foreach (var user in deserializedObject.Where(x => x.Id.Equals(id)))
             {
-                Console.WriteLine($"Printing properties for user of type: {user.GetType().Name}");
+                this.command.PrintLineOnConsole($"Printing properties for user of type: {user.GetType().Name}");
                 //PRINT Each object's property
                 var properties = user.GetType().GetProperties().ToList();
                 foreach (var property in properties)
                 {
-                    Console.WriteLine($"Property: {property.Name} Value: {property.GetValue(user)}");
+                    this.command.PrintLineOnConsole($"Property: {property.Name} Value: {property.GetValue(user)}");
                 }
             }
             streamReader.Dispose();

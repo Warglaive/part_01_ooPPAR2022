@@ -5,12 +5,10 @@
         private string Description { get; set; }
 
         private Action<string> printMessageAction;
-        private Action methodToExecute;
-        public Command(string description)
+        //private Action methodToExecute;
+        public Command()
         {
-            this.Description = description;
             printMessageAction = PrintLineOnConsole;
-            printMessageAction(this.Description);
         }
 
         public void PrintLineOnConsole(string message)

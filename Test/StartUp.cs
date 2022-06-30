@@ -11,6 +11,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
         static DBManager DbManager;
         public static void Main()
         {
+            Command = new Command();
             DbManager = AbstractDBFactory.CreateDbManager();
 
             Users = new List<User>();
@@ -19,9 +20,8 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void PrintFirstMenu()
         {
-            Command = new("Please choose an option: ");
-
             //TODO: Print menu and start Create user
+            Command.PrintLineOnConsole("Please choose an option: ");
             Command.PrintLineOnConsole("1. Create user");
             Command.PrintLineOnConsole("2. Show overview users in database");
             Command.PrintLineOnConsole("3. Show user details by Id");
