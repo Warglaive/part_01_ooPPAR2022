@@ -1,6 +1,7 @@
 ﻿using Assignment2.Entities;
 using Assignment2.Interfaces;
 using System.Configuration;
+using Test.Factories;
 
 namespace Assignment2.Factories
 {
@@ -9,16 +10,20 @@ namespace Assignment2.Factories
         /// <summary>
         ///  Fields so we do not use hardcoded values
         /// </summary>
-        private const string XMLDbType = "XML";
         private const string DBGetType = "DBType";
+        private const string XMLDbType = "XML";
+
         public static DBManager CreateDbManager()
         {
             var DBType = ConfigurationManager.AppSettings.Get(DBGetType);
-            if (DBType.Equals("XML"))
+            if (DBType.Equals(XMLDbType))
             {
-                var fileDirectory = ConfigurationManager.AppSettings.Get(XMLDbType);
-                return new DBManager(fileDirectory);
+                //return XML factory
+                var xmlDBFactory = new XMLDBFactory();
+                return xmlDBFactory.GetXMLDBManager();
             }
+
+            //Another DB Type
             else if (true)
             {
                 throw new NotSupportedException();
