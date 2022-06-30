@@ -39,7 +39,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                     break;
                 case "3":
                     SaveCreatedUsers();
-                    Console.WriteLine("Please enter user id: ");
+                    Command.PrintLineOnConsole("Please enter user id: ");
                     int id = int.Parse(Console.ReadLine());
                     ShowUserById(id);
                     break;
@@ -80,7 +80,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             Command.PrintLineOnConsole("Which type of User would you like to create? ");
             for (int i = 0; i < userTypes.Count; i++)
             {
-                Console.WriteLine($"{userTypes[i].Name}");
+                Command.PrintLineOnConsole($"{userTypes[i].Name}");
             }
             string inputSelectedType = Console.ReadLine();
 
@@ -92,7 +92,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             var firstCtor = constructrs;
             foreach (var parameter in firstCtor.GetParameters())
             {
-                Console.WriteLine($"Add {parameter.Name}: ");
+                Command.PrintLineOnConsole($"Add {parameter.Name}: ");
                 //add to list
                 consoleInputArguments.Add(Console.ReadLine());
             }
