@@ -23,12 +23,17 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
         private static void PrintFirstMenu()
         {
+            var functions = new List<Action>();
+
+            Action action;
+           
+            
             //TODO: Print menu and start Create user
-            Command.PrintLineOnConsole("Please choose an option: ");
-            Command.PrintLineOnConsole("1. Create user");
-            Command.PrintLineOnConsole("2. Show overview users in database");
-            Command.PrintLineOnConsole("3. Show user details by Id");
-            Command.PrintLineOnConsole("4. Exit application");
+            Command.printMessageAction("Please choose an option: ");
+            Command.printMessageAction("1. Create user");
+            Command.printMessageAction("2. Show overview users in database");
+            Command.printMessageAction("3. Show user details by Id");
+            Command.printMessageAction("4. Exit application");
 
             var input = Console.ReadLine();
             switch (input)
@@ -42,7 +47,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
                     break;
                 case "3":
                     SaveCreatedUsers();
-                    Command.PrintLineOnConsole("Please enter user id: ");
+                    Command.printMessageAction("Please enter user id: ");
                     int id = int.Parse(Console.ReadLine());
                     ShowUserById(id);
                     break;
@@ -80,10 +85,10 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //get all User types and make the user select which to create
             var userTypes = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)))
                 .ToList();
-            Command.PrintLineOnConsole("Which type of User would you like to create? ");
+            Command.printMessageAction("Which type of User would you like to create? ");
             for (int i = 0; i < userTypes.Count; i++)
             {
-                Command.PrintLineOnConsole($"{userTypes[i].Name}");
+                Command.printMessageAction($"{userTypes[i].Name}");
             }
             string inputSelectedType = Console.ReadLine();
 
@@ -95,7 +100,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             var firstCtor = constructrs;
             foreach (var parameter in firstCtor.GetParameters())
             {
-                Command.PrintLineOnConsole($"Add {parameter.Name}: ");
+                Command.printMessageAction($"Add {parameter.Name}: ");
                 //add to list
                 consoleInputArguments.Add(Console.ReadLine());
             }

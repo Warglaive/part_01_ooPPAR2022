@@ -16,7 +16,7 @@ namespace Assignment2.Entities
 
         public void ExitApplication()
         {
-            this.command.PrintLineOnConsole("See ya!");
+            this.command.printMessageAction("See ya!");
             Environment.Exit(0);
         }
 
@@ -25,7 +25,7 @@ namespace Assignment2.Entities
             // Read a particular key from the config file 
             //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            this.command.PrintLineOnConsole("All users are saved in: " + fileDirectory);
+            this.command.printMessageAction("All users are saved in: " + fileDirectory);
 
             //root
             XmlRootAttribute root = new XmlRootAttribute();
@@ -48,21 +48,21 @@ namespace Assignment2.Entities
             //use deserializer to make a class from XML
             // Read a particular key from the config file 
             //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-            this.command.PrintLineOnConsole("Reading file... : " + fileDirectory);
+            this.command.printMessageAction("Reading file... : " + fileDirectory);
 
             var serializer = new XmlSerializer(typeof(List<User>));
             var streamReader = new StreamReader(fileDirectory, true);
             List<User> deserializedObject = (List<User>)serializer.Deserialize(streamReader);
             foreach (var user in deserializedObject)
             {
-                this.command.PrintLineOnConsole($"Printing properties for user of type: {user.GetType().Name}");
+                this.command.printMessageAction($"Printing properties for user of type: {user.GetType().Name}");
                 //PRINT Each object's property
                 var properties = user.GetType().GetProperties().ToList();
                 foreach (var property in properties)
                 {
                     if (property.Name == "Id" || property.Name == "FirstName" || property.Name == "LastName")
                     {
-                        this.command.PrintLineOnConsole($"Property: {property.Name} Value: {property.GetValue(user)}");
+                        this.command.printMessageAction($"Property: {property.Name} Value: {property.GetValue(user)}");
 
                     }
                 }
@@ -74,19 +74,19 @@ namespace Assignment2.Entities
         public void ShowUserDetailsById(int id)
         {
             //var fileDirectory = ConfigurationManager.AppSettings.Get("XmlDB");
-            this.command.PrintLineOnConsole("Reading file... : " + fileDirectory);
+            this.command.printMessageAction("Reading file... : " + fileDirectory);
 
             var serializer = new XmlSerializer(typeof(List<User>));
             var streamReader = new StreamReader(fileDirectory, true);
             List<User> deserializedObject = (List<User>)serializer.Deserialize(streamReader);
             foreach (var user in deserializedObject.Where(x => x.Id.Equals(id)))
             {
-                this.command.PrintLineOnConsole($"Printing properties for user of type: {user.GetType().Name}");
+                this.command.printMessageAction($"Printing properties for user of type: {user.GetType().Name}");
                 //PRINT Each object's property
                 var properties = user.GetType().GetProperties().ToList();
                 foreach (var property in properties)
                 {
-                    this.command.PrintLineOnConsole($"Property: {property.Name} Value: {property.GetValue(user)}");
+                    this.command.printMessageAction($"Property: {property.Name} Value: {property.GetValue(user)}");
                 }
             }
             streamReader.Dispose();

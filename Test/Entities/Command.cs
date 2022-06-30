@@ -4,7 +4,7 @@
     {
         private string Description { get; set; }
 
-        private Action<string> printMessageAction;
+        public Action<string> printMessageAction;
         //private Action methodToExecute;
         public Command()
         {
