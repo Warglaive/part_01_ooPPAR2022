@@ -92,5 +92,10 @@ namespace Assignment2.Entities
             streamReader.Dispose();
             streamReader.Close();
         }
+
+        public IDBManager GetDBManager()
+        {
+            return this;
+        }
     }
 }

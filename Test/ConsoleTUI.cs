@@ -7,7 +7,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
     /// I do not see a reason to create new GUI class and to transfer all of the current methods there.
     /// Since the app is just GUI/BackEnd/Persistance
     /// </summary>
-    public class GUIStartUp
+    public class ConsoleTUI
     {
         static Command Command;
         static List<User> Users;
@@ -115,7 +115,6 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //XmlSerializer xmlSerializer = new(currentType);
             Users.Add(userInstance);
             PrintFirstMenu();
-
         }
     }
 }

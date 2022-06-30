@@ -1,4 +1,5 @@
 ﻿using Assignment2.Entities;
+using Assignment2.Interfaces;
 using System.Configuration;
 
 namespace Assignment2.Factories
@@ -23,5 +24,6 @@ namespace Assignment2.Factories
                 throw new NotSupportedException();
             }
         }
+        public abstract IDBManager GetDBManager();
     }
 }
