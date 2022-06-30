@@ -1,6 +1,5 @@
 ﻿using Assignment2.Entities;
 using Assignment2.Factories;
-using Assignment2.Interfaces;
 
 namespace Assignment2 // Note: actual namespace depends on the project name.
 {
@@ -16,6 +15,10 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
 
             Users = new List<User>();
             PrintFirstMenu();
+            //TEST PURPOSES
+            Console.WriteLine("Waiting...");
+            Console.ReadLine();
+
         }
 
         private static void PrintFirstMenu()
@@ -103,6 +106,7 @@ namespace Assignment2 // Note: actual namespace depends on the project name.
             //XmlSerializer xmlSerializer = new(currentType);
             Users.Add(userInstance);
             PrintFirstMenu();
+
         }
     }
 }

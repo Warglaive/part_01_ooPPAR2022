@@ -2,12 +2,16 @@
 using System.Xml.Serialization;
 using System.Text.RegularExpressions;
 using Assignment2.Exceptions;
+using Test.Entities;
 
 namespace Assignment2.Entities
 {
     [XmlInclude(typeof(Student))]
     [XmlInclude(typeof(Lecturer))]
     [XmlInclude(typeof(TestUserType))]
+    [XmlInclude(typeof(HelloNewUSer))]
+    [XmlInclude(typeof(NewUser3Test))]
+
     public abstract class User : IUser
     {
         //Read last id from XML
