@@ -3,7 +3,7 @@ using Assignment2.Factories;
 
 namespace Assignment2 // Note: actual namespace depends on the project name.
 {
-    public class StartUp
+    public class GUIStartUp
     {
         static Command Command;
         static List<User> Users;
