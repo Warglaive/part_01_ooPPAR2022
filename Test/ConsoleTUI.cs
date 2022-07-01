@@ -1,120 +1,78 @@
 ﻿using Assignment2.Entities;
-using Assignment2.Factories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Test.BusinessLogic;
 
-namespace Assignment2 // Note: actual namespace depends on the project name.
+namespace Test
 {
     /// <summary>
-    /// I do not see a reason to create new GUI class and to transfer all of the current methods there.
-    /// Since the app is just GUI/BackEnd/Persistance
+    /// Print each command using Action
     /// </summary>
     public class ConsoleTUI
     {
-        static Command Command;
-        static List<User> Users;
-        static DBManager DbManager;
-        public static void Main()
+        private Command command;
+        Action action;
+        Logic logic = new Logic();
+
+        public ConsoleTUI()
         {
-            Command = new Command();
-            DbManager = AbstractDBFactory.CreateDbManager();
-
-            Users = new List<User>();
-            PrintFirstMenu();
-            //TEST PURPOSES
-            Console.WriteLine("Press any button to exit console...");
-            Console.ReadLine();
-
+            this.command = new Command();
+        }
+        public Command Command()
+        {
+            return new Command("Choose an option from the menu: ");
         }
 
-        private static void PrintFirstMenu()
+        public Command CreateUserPrint()
         {
-            var functions = new List<Action>();
+            return new Command("1. Create User.");
+        }
 
-            Action action;
+        public Command CreateUserAction()
+        {
+            action = () => { logic.CreateUser(); };
+            return new Command(action);
+        }
 
+        public Command UsersOverviewPrint()
+        {
+            return new Command("2. Show overview of users in database.");
+        }
 
-            //TODO: Print menu and start Create user
-            Command.printMessageAction("Please choose an option: ");
-            Command.printMessageAction("1. Create user");
-            Command.printMessageAction("2. Show overview users in database");
-            Command.printMessageAction("3. Show user details by Id");
-            Command.printMessageAction("4. Exit application");
-
-            var input = Console.ReadLine();
-            switch (input)
+        public Command UsersOverviewAction()
+        {
+            action = () =>
             {
-                case "1":
-                    CreateUser();
-                    break;
-                case "2":
-                    SaveCreatedUsers();
-                    DisplayUsers();
-                    break;
-                case "3":
-                    SaveCreatedUsers();
-                    Command.printMessageAction("Please enter user id: ");
-                    int id = int.Parse(Console.ReadLine());
-                    ShowUserById(id);
-                    break;
-                case "4":
-                    ExitApplication();
-                    break;
-                default:
-                    break;
-            }
-        }
-        private static void ExitApplication()
-        {
-            DbManager.ExitApplication();
-        }
-        private static void ShowUserById(int id)
-        {
-            DbManager.ShowUserDetailsById(id);
+                logic.DisplayUsers();
+            };
+            return new Command(action);
         }
 
-        private static void DisplayUsers()
+        public Command UserByIdPrint()
         {
-            DbManager.ShowUsersOverview();
-            PrintFirstMenu();
+            return new Command("3. Show specific user details.");
         }
 
-        private static void SaveCreatedUsers()
+        public Command UserByIdAction()
         {
-            //add to array and save users as array in XML file
-
-            DbManager.SaveUsers(Users);
+            command.PrintLineOnConsole("Enter Id: ");
+            var id = int.Parse(Console.ReadLine());
+            action = () => { logic.ShowUserById(id); };
+            return new Command(action);
         }
 
-        private static void CreateUser()
+        public Command ExitAppPrint()
         {
-            //get all User types and make the user select which to create
-            var userTypes = typeof(User).Assembly.GetTypes().Where(x => x.IsSubclassOf(typeof(User)))
-                .ToList();
-            Command.printMessageAction("Which type of User would you like to create? ");
-            for (int i = 0; i < userTypes.Count; i++)
-            {
-                Command.printMessageAction($"{userTypes[i].Name}");
-            }
-            string inputSelectedType = Console.ReadLine();
+            return new Command("4. Exit application.");
+        }
 
-            var currentType = userTypes.Where(x => x.Name.Equals(inputSelectedType)).FirstOrDefault();
-
-            // var typeProperties = currentType.GetProperties();
-            var consoleInputArguments = new List<object>();
-            var constructrs = currentType.GetConstructors().Where(x => x.GetParameters().Length > 0).First();
-            var firstCtor = constructrs;
-            foreach (var parameter in firstCtor.GetParameters())
-            {
-                Command.printMessageAction($"Add {parameter.Name}: ");
-                //add to list
-                consoleInputArguments.Add(Console.ReadLine());
-            }
-            //pass list to type's constructor
-            var arr = consoleInputArguments.ToArray();
-            var userInstance = (User)Activator.CreateInstance(currentType, arr);
-            //Save instance to XML
-            //XmlSerializer xmlSerializer = new(currentType);
-            Users.Add(userInstance);
-            PrintFirstMenu();
+        public Command ExitAppAction()
+        {
+            action = () => { logic.ExitApplication(); };
+            return new Command(action);
         }
     }
 }

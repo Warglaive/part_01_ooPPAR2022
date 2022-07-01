@@ -4,16 +4,29 @@
     {
         private string Description { get; set; }
 
-        public Action<string> printMessageAction;
+        public Action action;
         //private Action methodToExecute;
-        public Command()
+
+
+        public Command(string Description)
         {
-            printMessageAction = PrintLineOnConsole;
+            this.Description = Description;
+
+            action = () => PrintLineOnConsole(Description);
+
         }
 
         public void PrintLineOnConsole(string message)
         {
             Console.WriteLine(message);
+        }
+        public Command(Action action)
+        {
+            this.action = action;
+        }
+
+        public Command()
+        {
         }
     }
 }

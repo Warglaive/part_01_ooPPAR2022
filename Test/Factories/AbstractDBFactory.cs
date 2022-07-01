@@ -1,7 +1,7 @@
-﻿using Assignment2.Entities;
-using Assignment2.Interfaces;
+﻿using Assignment2.Interfaces;
 using System.Configuration;
 using Test.Factories;
+using Test.Persistence;
 
 namespace Assignment2.Factories
 {
