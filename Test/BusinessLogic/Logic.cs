@@ -11,8 +11,9 @@ namespace Test.BusinessLogic
     /// </summary>
     public class Logic
     {
+        private List<User> Users = new List<User>();
         static Command Command;
-        static List<User> Users;
+        // static List<User> Users;
         static DBManager DbManager;
 
         public Logic()
@@ -20,22 +21,11 @@ namespace Test.BusinessLogic
             Command = new Command();
             DbManager = AbstractDBFactory.CreateDbManager();
 
-            Users = new List<User>();
         }
         public void PrintFirstMenu()
         {
             //Make user chose start option
             StartUp.ChoseStartOption();
-
-
-
-            /*        Command.PrintLineOnConsole("Please choose an option: ");
-                    Command.PrintLineOnConsole("1. Create user");
-                    Command.PrintLineOnConsole("2. Show overview users in database");
-                    Command.PrintLineOnConsole("3. Show user details by Id");
-                    Command.PrintLineOnConsole("4. Exit application");*/
-
-
         }
         public void ExitApplication()
         {
@@ -89,6 +79,7 @@ namespace Test.BusinessLogic
             //Save instance to XML
             //XmlSerializer xmlSerializer = new(currentType);
             Users.Add(userInstance);
+            SaveCreatedUsers();
             PrintFirstMenu();
         }
     }

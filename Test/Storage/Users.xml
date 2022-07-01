@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><User xsi:type="Student"><Id>0</Id><FirstName>asd</FirstName><LastName>asd</LastName><Email>asads@abv.bg</Email><Nationality>asdasd</Nationality><StudyProgram>Software</StudyProgram><Cohort>2022</Cohort><StudentClass>C</StudentClass></User></ArrayOfUser>
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<User xsi:type="Student">
+		<Id>1</Id>
+		<FirstName>asd</FirstName>
+		<LastName>dsa</LastName>
+		<Email>ppp@abv.bg</Email>
+		<Nationality>BBB</Nationality>
+		<StudyProgram>Software</StudyProgram>
+		<Cohort>C</Cohort>
+		<StudentClass>123</StudentClass>
+	</User>
+</ArrayOfUser>
