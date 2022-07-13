@@ -11,7 +11,7 @@ namespace Assignment2.Entities
     [XmlInclude(typeof(TestUserType))]
     [XmlInclude(typeof(HelloNewUSer))]
     [XmlInclude(typeof(NewUser3Test))]
-
+    [XmlInclude(typeof(NewUser4))]
     public abstract class User : IUser
     {
         //Read last id from XML
