@@ -2,18 +2,18 @@
 {
     public class Command
     {
-        private string Description { get; set; }
+        public string Description { get; set; }
 
         public Action action;
-        //private Action methodToExecute;
+        private Action methodToExecute;
 
 
-        public Command(string Description)
+        public Command(string Description, Action methodToExecute)
         {
             this.Description = Description;
 
             action = () => PrintLineOnConsole(Description);
-
+            this.methodToExecute = methodToExecute;
         }
 
         public void PrintLineOnConsole(string message)
@@ -25,8 +25,8 @@
             this.action = action;
         }
 
-        public Command()
+      /*  public Command()
         {
-        }
+        }*/
     }
 }

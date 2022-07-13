@@ -15,15 +15,25 @@ namespace Test.BusinessLogic
         static Command Command;
         // static List<User> Users;
         static DBManager DbManager;
-
+        List<Command> commands;
         public Logic()
         {
-            Command = new Command();
+            this.commands = new List<Command>();
+            commands.Add(new Command("CreateNewUser", this.CreateUser));
+            //int id = 0;
+            // commands.Add(new Command("ShowUserById", this.ShowUserById(id));
+            commands.Add(new Command("DisplayUsers", this.DisplayUsers));
+            commands.Add(new Command("SaveCreatedUsers", this.SaveCreatedUsers));
+
             DbManager = AbstractDBFactory.CreateDbManager();
 
         }
         public void PrintFirstMenu()
         {
+            foreach (var item in commands)
+            {
+                Console.WriteLine(item.Description);
+            }
             //Make user chose start option
             StartUp.ChoseStartOption();
         }

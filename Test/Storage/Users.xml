@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<User xsi:type="Student">
+	<User xsi:type="NewUser4">
 		<Id>0</Id>
-		<FirstName>studentHi</FirstName>
-		<LastName>hiasd</LastName>
-		<Email>dsa@abv.bg</Email>
-		<Nationality>Ukraine</Nationality>
-		<StudyProgram>Software</StudyProgram>
-		<Cohort>2020</Cohort>
-		<StudentClass>C</StudentClass>
+		<FirstName>adsa</FirstName>
+		<LastName>asdsa</LastName>
+		<Email>asd@abv.bg</Email>
+		<Nationality>Bu</Nationality>
+		<hobby>Play</hobby>
+		<Hobby>Play</Hobby>
 	</User>
 </ArrayOfUser>
